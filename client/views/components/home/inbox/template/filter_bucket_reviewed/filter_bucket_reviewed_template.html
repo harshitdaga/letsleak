@@ -1,0 +1,53 @@
+<template name="_FilterBucketReviewed">
+    <div class="inbox-message-cotainer">
+        <div class="modal-body">
+            <div class="bs-callout bs-callout-info">
+                <h4 class="modal-title" id="inbox-subject">Your bucket review</h4>
+            </div>
+            <div class="inbox-content width100">
+                <p>It came to our attention that one of your boucke did not follow LetsLeak {{>Links key="GroundRules"
+                    message="Ground Rules" target="_blank"}} and was not upto the LetsLeak community standards.
+                </p>
+
+                <p>
+                    This is to update and inform you that the
+                    {{#if eq this.f_paramObj.f_action "VALID"}}
+                    <a href="{{pathFor 'bucket.insight' _id=this.f_paramObj.f_bucketId }}" target="_blank">bucket</a>
+                    has
+                    been marked as <b>APPROPRIATE</b>.
+                    {{else}}
+                        {{#if eq this.f_paramObj.f_bucketAction "UPDATE"}}
+                        <a href="{{pathFor 'bucket.insight' _id=this.f_paramObj.f_bucketId }}" target="_blank">bucket</a> update
+                        {{else}}
+                        bucket
+                        {{/if}}
+                         has been marked as <b>NOT APPROPRIATE</b> beacuse {{ toLowerCase this.f_paramObj.f_filter_reason}}
+                    {{/if}}
+
+                </p>
+
+                <p>
+                    <span class="entypo bucket">
+                    </span>
+                    <b>
+                        {{this.f_paramObj.f_bucket.f_name}}
+                    </b><br/>
+                    <span style="margin-left: 36px">{{this.f_paramObj.f_bucket.f_desc}}</span>
+                </p>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="modal-footer">
+            <span class="pull-left"><h5>
+                <small>This is an auto-generated message. If you have any concerns please visit {{>Links
+                    key="GroundRules"
+                    message="Ground Rules" target="_blank"}} or {{>Links key="ContactUs" message="Contact Us"
+                    target="_blank"}}.
+                </small>
+            </h5></span>
+
+            <button type="button" class="btn btn-primary pull-right" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</template>
+

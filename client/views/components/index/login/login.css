@@ -1,0 +1,63 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+/*****************************************************************************/
+/* CreateAccount: Style */
+/*****************************************************************************/
+#createAccountTemplate {
+    margin: auto;
+    width: 70%;
+    margin-top: 20px;
+}
+#loginTemplate, #accountInviteTemplate {
+    /*width: 40%;*/
+    margin: 2% 4%;
+    float: left;
+}
+/*#loginTemplate {
+    border-right: 1px solid #ccc;
+    padding-right: 2%;
+}*/
+.login-btn {
+    text-align: right;
+}
+.login-window {
+    /*min-height: 250px !important;*/
+    font-size: 0.7em;
+}
+.login-window, #forgotPasswordTemplate, #createAccountTemplate {
+    border: 1px solid #E2E1E1;
+    margin: auto !important;
+    padding: 10px;
+    background-color: #ffffff;
+    line-height: 1.2em;
+    font-size: .7em;
+    font-weight: normal;
+    overflow:auto;
+}
+#forgotPasswordTemplate p {
+    margin-bottom: 10px;
+    display: block;
+}
+/*.login-window h4, #forgotPasswordTemplate h5, #createAccountTemplate h4 {
+    margin: 0 0 10px 0;
+}*/
+/*#forgotPassword, .login-btn {
+    width: 50%;
+}*/
+#forgotPassword button {
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    text-decoration: underline;
+}
+#forgotPasswordTemplate #securityPin {
+    width: 100%;
+}
+#loginTemplate .form-horizontal .form-group, #forgotPasswordTemplate .form-horizontal .form-group, #createAccountTemplate .form-horizontal .form-group, #addBucketForm .form-group {
+    margin: 0 0 15px 0 !important;
+    line-height: 18px;
+}

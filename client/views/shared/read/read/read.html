@@ -1,0 +1,73 @@
+<template name="Read">
+    <div id="readTemplate">
+        <div class="staticHeader">
+        <div id="options-panel">
+            <ul class="nav nav-pills nav-stacked">
+                <div class="letsleak-header-logo pull-left marginR20"><a href="/home" title="LetsLeak" alt="LetsLeak"></a> </div>
+                <li id="aboutus-li" panel="AboutUs">
+                    {{>Links key="AboutUs" message="Why LetsLeak"}}
+                </li>
+                <li id="groundrules-li" panel="GroundRules">
+                    {{>Links key="GroundRules" message="Ground Rules"}}
+                </li>
+                <li id="faq-li" panel="FAQ">
+                    {{>Links key="FAQ" message="FAQ"}}
+                </li>
+                <li id="tnc-li" panel="TnC">
+                    {{>Links key="TnC" message="TnC" }}
+                </li>
+                <li id="privacy-li" panel="Privacy">
+                    {{>Links key="Privacy" message="Privacy"}}
+                </li>
+                <li id="report-li" panel="Report">
+                    {{>Links key="Report" message="Report a Problem"}}
+                </li>
+                <li id="contactus-li" panel="ContactUs">
+                    {{>Links key="ContactUs" message="Contact Us"}}
+                </li>
+            </ul>
+        </div>
+            <div class="staticMobileMenu">
+                <div class="letsleak-header-logo pull-left"><a href="/home" title="LetsLeak" alt="LetsLeak"></a> </div>
+            </div>
+            <div class="staticMobileMenu pull-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle mobileMenu" data-toggle="dropdown">
+                            <span class="entypo list"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li id="aboutus-li" panel="AboutUs">
+                                {{>Links key="AboutUs" message="Why LetsLeak"}}
+                            </li>
+                            <li id="groundrules-li" panel="GroundRules">
+                                {{>Links key="GroundRules" message="Ground Rules"}}
+                            </li>
+                            <li id="faq-li" panel="FAQ">
+                                {{>Links key="FAQ" message="FAQ"}}
+                            </li>
+                            <li id="tnc-li" panel="TnC">
+                                {{>Links key="TnC" message="TnC" }}
+                            </li>
+                            <li id="privacy-li" panel="Privacy">
+                                {{>Links key="Privacy" message="Privacy"}}
+                            </li>
+                            <li id="report-li" panel="Report">
+                                {{>Links key="Report" message="Report a Problem"}}
+                            </li>
+                            <li id="contactus-li" panel="ContactUs">
+                                {{>Links key="ContactUs" message="Contact Us"}}
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div id="read-container-panel" class="pull-left">
+            {{> UI.dynamic template=this.templateName }}
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</template>

@@ -1,0 +1,49 @@
+<template name="_FilterCommentReviewed">
+    <div class="inbox-message-cotainer">
+        <div class="modal-body">
+            <div class="bs-callout bs-callout-info">
+                <h4 class="modal-title" id="inbox-subject">Your comment review</h4>
+            </div>
+            <div class="inbox-content width100">
+                <p>It came to our attention that one of your comment did not follow LetsLeak {{>Links key="GroundRules"
+                    message="Ground Rules" target="_blank"}} and was not upto the LetsLeak community standards.
+                </p>
+
+                <p>
+                    This is to update and inform you that the comment has been marked as
+
+                    {{#if eq this.f_paramObj.f_action "VALID"}}
+                        <b>APPROPRIATE.</b>
+                    {{else}}
+                        <b>NOT APPROPRIATE</b> beacuse {{toLowerCase this.f_paramObj.f_filter_reason}}
+                    {{/if}}
+                </p>
+
+                <p>
+                    <span class="fa fa-quote-left">
+                    </span>
+
+                    <div style="margin-left: 3%">
+                        {{this.f_paramObj.f_comment}}, {{> Timestamp timestamp=this.f_paramObj.f_timestamp}}
+                        <p>
+                            <a href="{{pathFor 'status.message' _id=this.f_postId}}" target="_blank">Post</a> on which the
+                            comment was recorded.
+                        </p>
+                    </div>
+                </p>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="modal-footer">
+            <span class="pull-left"><h5>
+                <small>This is an auto-generated message. If you have any concerns please visit {{>Links
+                    key="GroundRules"
+                    message="Ground Rules" target="_blank"}} or {{>Links key="ContactUs" message="Contact Us"
+                    target="_blank"}}.
+                </small>
+            </h5></span>
+            <button type="button" class="btn btn-primary pull-right" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</template>
+

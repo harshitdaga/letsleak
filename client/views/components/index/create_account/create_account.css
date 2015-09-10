@@ -1,0 +1,29 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+/*****************************************************************************/
+/* CreateAccount: Style */
+/*****************************************************************************/
+#createAccountTemplate {
+    margin: auto;
+    width: 70%;
+    margin-top: 20px;
+}
+.error-text {
+    display: none;
+    color: #ff0000;
+}
+#securityInfo {
+    cursor: pointer;
+}
+#securityPinGroup #securityPin {
+    /*width: 85%;*/
+
+}
+#securityPinGroup .fa.fa-info {
+    margin: -30px 5px 0 0 !important;
+    padding: 5px 10px !important;
+}

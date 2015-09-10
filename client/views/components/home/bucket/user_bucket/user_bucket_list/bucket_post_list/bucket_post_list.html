@@ -1,0 +1,98 @@
+<template name="BucketPostList">
+    <div id="bucketPostListTemplate">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                <button type="button" class="btn btn-default icon pull-right marginR20" id="reloadPostButton">
+                    <span class="entypo cycle"></span>
+                </button>
+            </button>
+            <!--<h4 class="modal-title">Post collection for the bucket.</h4>-->
+                <h4 class="modal-title" id="bucketName">{{toCapitalize this.f_bucket.f_name}}</h4>
+        </div>
+
+        <div class="modal-body">
+            <!-- Errors Starts -->
+            <div id="bucketPostList-generic-error">
+            </div>
+
+            <div class="error-text hidden">
+                <span class="B_1002">You are not the owner of this bucket.</span>
+            </div>
+            <!-- Errors Ends -->
+
+            <!--<div id="bucketName">
+                <h2>{{toCapitalize this.f_bucket.f_name}}</h2>
+            </div>-->
+            <div class="clearfix"></div>
+
+            {{init this}}
+            {{#if eq templateStatus 'ready' true}}
+            <div id="postList">
+                {{#if postExist}}
+                <ul class="pull-left">
+                    {{#each postList}}
+                    <li class="list-group-item list-group-item">
+                        <ul class="postDescription" id="{{this._id}}">
+                            <li>
+                                <button type="button" class="btn btn-default icon" value="{{this._id}}" id="removePostButton">
+                                    <i class="fa fa-trash-o"></i>
+                                </button>
+                            </li>
+                            <li>
+                                {{this.f_message}}
+                            </li>
+                        </ul>
+                    </li>
+                    {{/each}}
+                    <button type="button" id="showMorePostButton" class="btn btn-secondary">
+                        <i class="fa fa-download">Show more</i>
+                    </button>
+                </ul>
+
+                <!-- post list item preview -->
+                <!--<div class="posted-message">
+                    <ul>
+                        <li class="list-group-item" style="border: none !important">
+                            <div class="thumbnail red {{this.f_color}}">
+                                <div class="thumbnailContainer">
+                                    <h4>postPreview</h4>
+
+                                    <div class="homeFeedFooter">
+                                        <a class="btn pull-right" role="button" href="{{pathFor 'status.message' _id=this.f_postId}}" id="showMessageButton" value="{{this._id}}" target="_blank" >
+                                            <span class="entypo level-down"></span>
+                                        </a>
+                                        <div id="timestamp" class="pull-right">
+                                            &lt;!&ndash;{{> Timestamp timestamp=this.f_timestamp}}&ndash;&gt;
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="homeFeedFooter-bg"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                </div>-->
+                <!-- post list item preview -->
+
+
+                {{else}}
+                <div class="bs-callout bs-callout-warning">
+                    Sorry! No post added to this bucket.
+                </div>
+                {{/if}}
+            </div>
+            {{else}}
+            {{#if eq templateStatus 'loading' true}}
+            {{> Loading }}
+            {{/if}}
+            {{/if}}
+
+        </div>
+        <div class="modal-footer">
+            <i class="entypo paper-plane"></i>#{{totalPostCount this._id}}
+            Last update {{>Timestamp timestamp=lastUpdated}} ago.
+        </div>
+    </div>
+</template>

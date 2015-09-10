@@ -1,0 +1,8 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+Will store methods present at server side.
+All the methods are written here.

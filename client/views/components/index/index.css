@@ -1,0 +1,501 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+/*****************************************************************************/
+/* Index: Style */
+/*****************************************************************************/
+
+@import url(http://fonts.googleapis.com/css?family=Lato);
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+html {
+    font: 1em/1.5 "Lato", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizelegibility;
+}
+
+body {
+    font-size: 1.3em;
+}
+
+header {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: url(../images/swing_home.jpg) center no-repeat;
+    /* Image Credit: Unsplash.me */
+    background-size: cover;
+}
+header .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+header h1 {
+    text-transform: uppercase;
+    line-height: 1.2em;
+}
+header h1, header h2 {
+    margin: 0;
+}
+header h2 {
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1.2em;
+    margin: 1em;
+    text-transform: none;
+}
+header hgroup {
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 1em 3em;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+header .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: url(../images/swing_home_blur.jpg) center no-repeat;
+    background-size: cover;
+    z-index: 0;
+    opacity: 0;
+}
+.top-header {
+    width:100%;
+    z-index:999;
+    background-color:rgba(255, 255, 255, 0.7);
+    padding:10px 20px;
+    position:absolute;
+    color: #000;
+}
+.top-header ul li {
+    display: inline;
+}
+.top-header ul li:last-child {
+    float: right;
+}
+.top-header ul li:first-child {
+    float: left;
+}
+.site {
+    padding: 20em 0;
+    text-align: center;
+    background-color: #efefef;
+    font-size: .8em;
+    color: #444;
+}
+.site a {
+    color: #666;
+    text-decoration: none;
+}
+.site a:hover {
+    color: #222;
+}
+
+/* ============================================================
+  SECTIONS
+============================================================ */
+section.module:last-child {
+    margin-bottom: 0;
+}
+section.module h2 {
+    margin-bottom: 40px;
+    font-family: "Roboto Slab", serif;
+    font-size: 30px;
+}
+section.module p {
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: 300;
+}
+section.module p:last-child {
+    margin-bottom: 0;
+}
+section.module.content {
+    padding: 40px 0;
+}
+section.module.parallax {
+    /*padding: 240px 0;
+    background-position: 0 0;
+    background-size: cover;
+    background-position: center 100px;*/
+    height: 600px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+section.module.parallax .container {
+    color: #fff;
+    font-size: 8em;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px white;
+    opacity: .4;
+}
+section.module.parallax-1 .container:after {
+    content: "Post";
+}
+section.module.parallax-2 .container:after {
+    content: "Look";
+}
+section.module.parallax-3 .container:after {
+    content: "Save";
+}
+section.module.parallax-4 .container:after {
+    content: "Read";
+}
+section.module.parallax-1 {
+    background: url("../images/post_wall.jpg");
+    /*background: radial-gradient(ellipse at top, #1b2735 0%, #090a0f 100%);*/
+}
+section.module.parallax-2 {
+    background: url("../images/look_monocles.jpg");
+}
+section.module.parallax-3 {
+    background: url("../images/save_bucket.jpg") repeat-y center center;
+}
+section.module.parallax-4 {
+    background: url("../images/read_book.jpg");
+}
+button {
+    background-color: #66a0fd;
+    padding: .5em 2em;
+    border:none;
+    font-size: 1em;
+    cursor: pointer;
+    color: #ffffff;
+}
+button:hover {
+    background-color: #245dc1;
+}
+@media all and (min-width: 600px) {
+    section.module h2 {
+        font-size: 42px;
+    }
+    section.module p {
+        font-size: 20px;
+    }
+    section.module.parallax {
+        padding: 60px 0;
+    }
+    section.module.parallax h1 {
+        /*font-size: 96px;*/
+    }
+}
+@media all and (min-width: 960px) {
+    section.module.parallax h1 {
+        font-size: 160px;
+    }
+}
+
+/* Custom Styles */
+
+.index-content-icon {
+    width:20%;
+    height:184px;
+    float:left;
+    margin:20px;
+    border-radius:150px;
+    background-image: url('../images/sprite_icons.svg');
+    background-repeat: no-repeat;
+    background-size: 111%;
+}
+.index-content-icon.post {
+    background-color: #A91515;
+    background-position: -1px 0px;
+}
+.index-content-icon.look {
+    background-color: #D36003;
+    background-position: -1px -184px;
+}
+.index-content-icon.save {
+    background-color: #415C15;
+    background-position: -1px -367px;
+}
+.index-content-icon.read {
+    background-color: #4D4D4D;
+    background-position: -1px -551px;
+}
+.index-content {
+    width:70%;
+    float:left;
+}
+aside .logo, .LetsLeak-logo-index {
+    background: url(../images/fav_leak_logo.png) no-repeat center center;
+    background-size: cover;
+    width: 20px;
+    height: 30px;
+    display: inherit;
+}
+.index-logo span {
+    font-size: 20px;
+    font-weight: bold;
+}
+.index-logo span:first-child {
+    color: #333333;
+    margin-left: 25px;
+}
+.index-logo span:last-child {
+    color: #4E8BFF;
+}
+.top-menu a {
+    font-size: 1em;
+    padding: 5px 10px;
+}
+.top-menu a:hover {
+    background-color: #333333;
+    color: #fff;
+}
+.pull-left {
+    float: left;
+}
+.pull-right {
+    float: right;
+}
+
+
+
+/* ============================================================
+  INFO BAR
+============================================================ */
+.info-bar {
+    padding: 5px 0;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+.info-bar .icon {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    background: url("../img/core/icons-light.png");
+    background-image: url("../img/core/icons-light.svg"), none;
+}
+.info-bar .cmn-tut {
+    background-position: 0 0;
+}
+.info-bar .cmn-prev {
+    background-position: -30px 0;
+}
+.info-bar .cmn-next {
+    background-position: -60px 0;
+}
+.info-bar .cmn-download {
+    background-position: -90px 0;
+}
+.info-bar .cmn-archive {
+    background-position: -120px 0;
+}
+.info-bar .icon[data-title]:after {
+    opacity: 1;
+}
+.info-bar .icon[data-title]:hover:after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 20px;
+    content: attr(data-title);
+    padding: 5px 10px;
+    background-color: #fff;
+    color: #000;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* ============================================================
+  HEADER & SITE TITLE
+============================================================ */
+/* header */
+header .branding {
+    padding: 20px 0;
+}
+header .logo {
+    margin-bottom: 20px;
+    text-align: center;
+}
+header .logo img {
+    display: inline-block;
+    vertical-align: middle;
+}
+header .social {
+    text-align: center;
+}
+header .social a {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+    width: 30px;
+    height: 30px;
+    color: rgba(0, 0, 0, 0);
+    font-size: 0;
+    text-indent: -9999px;
+    background-size: 30px 30px;
+    background-image: url("../img/core/social-light.png");
+    background-image: url("../img/core/social-light.svg"), none;
+    background-size: 180px 30px;
+}
+header .social a.fb {
+    background-position: 0 0;
+}
+header .social a.twitter {
+    background-position: -30px 0;
+}
+header .social a.googleplus {
+    background-position: -60px 0;
+}
+header .social a.rss {
+    background-position: -90px 0;
+}
+header .social a.email {
+    background-position: -120px 0;
+}
+header .social a.search {
+    background-position: -150px 0;
+}
+header .social a:hover {
+    opacity: 0.4;
+}
+
+@media all and (min-width: 600px) {
+    header .branding {
+        padding-left: 60px;
+    }
+    header .logo {
+        margin-bottom: 0;
+        margin-left: -60px;
+        float: left;
+        width: 60px;
+        height: 60px;
+    }
+    header .logo img {
+        display: block;
+        margin: 0;
+    }
+    header .social {
+        padding: 15px 0;
+        float: right;
+        width: 100%;
+        text-align: right;
+    }
+}
+/* site title */
+.site-title {
+    padding: 5px 0;
+    background-color: black;
+    text-align: center;
+}
+.site-title h1 {
+    color: #fff;
+}
+
+/* ============================================================
+  FOOTER
+============================================================ */
+footer {
+    padding: 20px 0;
+    font-size: .6em;
+}
+footer .asides {
+    margin-bottom: 20px;
+}
+footer aside {
+    margin-bottom: 10px;
+}
+footer nav li:first-child {
+    border-bottom: 1px dotted #333;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 14px;
+}
+footer nav ul {
+    list-style: none;
+    margin: 0 10px;
+    padding: 0;
+    text-align: center;
+    width: 70%;
+}
+footer nav li {
+    display: inline-block;
+}
+footer nav a {
+    display: block;
+    margin: 0 5px;
+    color: #5c5c5c;
+}
+footer nav a:hover {
+    color: #c4c4c4
+}
+footer .logo {
+    text-align: center;
+}
+footer .logo img {
+    display: inline-block;
+    vertical-align: middle;
+}
+footer .copyright {
+    text-align: left;
+    margin: 5px 10px;
+}
+footer .copyright small {
+    color: #c4c4c4;
+    font-size: 12px;
+}
+footer .copyright a {
+    color: #fff;
+}
+
+@media all and (min-width: 600px) {
+    footer aside {
+        margin-bottom: 0;
+        float: left;
+        width: 33.3333%;
+    }
+    footer nav ul {
+        text-align: left;
+    }
+    footer nav li {
+        display: block;
+    }
+    footer nav a {
+        display: inline-block;
+        margin: 0;
+    }
+    footer .logo {
+        text-align: right;
+    }
+}

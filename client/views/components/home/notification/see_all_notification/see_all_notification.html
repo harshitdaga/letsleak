@@ -1,0 +1,50 @@
+<template name="SeeAllNotification">
+  <div id="seeAllNotificationTemplate">
+
+      <!-- Errors Starts -->
+      <div id="seeAllNotification-generic-error">
+      </div>
+
+      <div class="error-text hidden">
+      </div>
+      <!-- Errors Ends -->
+
+      <div class="">
+          <button type="btn btn-link" class="btn btn-primary" id="markAllAsRead">Mark All as Read</button>
+      </div>
+      {{#each allNotification}}
+      <li class="notification" role="presentation" id="{{this._id}}">
+          {{#if eq this.f_type.f_name 'POST_LIKE' true}}
+          {{> _PostLikeNotification notification=this}}
+          {{/if}}
+
+          {{#if eq this.f_type.f_name 'POST_COMMENT' true}}
+          {{> _PostCommentNotification notification=this}}
+          {{/if}}
+
+          {{#if eq this.f_type.f_name 'REPORT_ABUSE' true}}
+          {{> _ReportAbuseNotification notification=this}}
+          {{/if}}
+
+          {{#if eq this.f_type.f_name 'POST_ADDED_TO_BUCKET' true}}
+          {{> _BucketPostAddedNotification notification=this}}
+          {{/if}}
+
+          {{#if eq this.f_type.f_name 'BUCKET_FOLLOWED' true}}
+            {{> _BucketFollowedNotification notification=this}}
+          {{/if}}
+      </li>
+      {{else}}
+      <div class="bs-callout bs-callout-warning">
+          No notification(s) to show.
+      </div>
+      {{/each}}
+
+      <span>
+          <h6>
+              <small>A maximum of 20 read notification will be visible to you.</small>
+          </h6>
+      </span>
+      {{isAnyUnreadNotification}}
+  </div>
+</template>

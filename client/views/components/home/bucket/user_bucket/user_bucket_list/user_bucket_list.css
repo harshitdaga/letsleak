@@ -1,0 +1,161 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+/*****************************************************************************/
+/* UserBucketList: Style */
+/*****************************************************************************/
+#userBucketTemplate {
+    font-size: 1.0em;
+}
+/*#userBucketList {
+    width: 103%;
+    padding: 15px;
+}*/
+#userBucketList .alterColor .footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+#userBucketList .alterColor .footer {
+    position: absolute;
+    bottom: 7%;
+    width: 94%;
+}
+#userBucketList .alterColor .footer .timestamp {
+    margin: 0;
+}
+.alterColor {
+    min-height: 250px;
+    max-height: 250px;
+    margin-bottom: 20px;
+    float: left;
+    border: 1px solid #808080;
+    padding: 10px;
+    width: 47%;
+    line-height: 1.5em;
+    margin-right: 22px;
+    border-radius: 2px;
+    position: relative;
+}
+.alterColor:nth-child(odd) {
+    background-color: #eee;
+}
+.alterColor:nth-child(even) {
+    background-color: #fff;
+}
+.user_bucket_list .book_name {
+    margin-bottom: 10px ;
+}
+.user_bucket_list .book_name h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 70%;
+    word-wrap: break-word;
+    white-space: normal;
+}
+.user_bucket_list .book_name .control button, .user_bucket_list .book_name .control i {
+    padding: 2px 7px;
+    margin: 0;
+}
+.user_bucket_list .book_name span {
+    position: relative;
+    display: block;
+    margin: 1em 0 0 0;
+    padding: 1em 0 0 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 0.4em;
+    font-family: "Lato", sans-serif;
+}
+.bs-callout {
+    margin: 20px 0px;
+    padding: 20px;
+    border-left: 3px solid #EEE;
+}
+.bs-callout h4 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+.bs-callout p:last-child {
+    margin-bottom: 0px;
+}
+.bs-callout-warning {
+    background-color: #FCF8F2;
+    border-color: #F0AD4E;
+}
+.bs-callout-danger {
+    background-color: #FDF7F7;
+    border-color: #D9534F;
+}
+
+.bs-callout-warning h4 {
+    color: #F0AD4E;
+}
+
+.bs-callout-danger h4 {
+    color: #D9534F;
+}
+
+.bucket_settings {
+    text-align: right;
+}
+#userBucketList .timestamp, #userBucketList .access, #userBucketList .isEditable {
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+#userBucketList .book_details {
+    width: 100%;
+}
+#userBucketList .book_details .details {
+    word-wrap: break-word;
+    white-space: normal;
+}
+#userBucketList .alterColor ul li {
+    display: inline-block;
+    padding: 0 8px;
+}
+#userBucketList .alterColor ul li .entypo.cross {
+    font-size: 3em;
+    top: 4px;
+    display: block;
+    position: relative;
+}
+#userBucketList .alterColor ul li:first-child {
+    padding-left: 0;
+}
+#userBucketList .alterColor ul li:last-child {
+    border: none;
+    padding: 0;
+}
+#userBucketList .tab-content h3{
+    margin-top: 0;
+}
+.updateBucketListContainer #refreshButton {
+    float: right;
+    top: -40px;
+    position: relative;
+}
+
+.updateBucketListContainer .container {
+    padding-left: 0;
+    width: auto;
+    border-top: none;
+    margin-bottom: 30px;
+}
+.updateBucketListContainer {
+    margin-top: 20px;
+}
+.updateBucketListContainer .nav-tabs > li > a {
+    /*border: 1px solid #ccc;*/
+    text-decoration: none;
+    color: #333333 !important;
+}

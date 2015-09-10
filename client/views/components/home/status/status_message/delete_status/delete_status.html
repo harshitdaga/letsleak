@@ -1,0 +1,35 @@
+
+<template name="DeleteStatus">
+    <div id="deleteStatusTemplate">
+        <!-- Modal -->
+        <div class="modal fade" id="deleteStatusModal" tabindex="-1" role="dialog" aria-labelledby="Delete Status"
+             aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Status Delete Confirmation!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Errors Starts -->
+                        <div id="deleteStatus-generic-error">
+                        </div>
+
+                        <div class="error-text hidden">
+                            <span class=""></span>
+                        </div>
+                        <!-- Errors Ends -->
+
+                        <h5>Are you sure you want to delete the status message?</h5>
+                        <input class="hidden" id="bucketId"/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="deleteButton" value="{{this.postId}}">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+

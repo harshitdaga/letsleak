@@ -1,0 +1,7 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+Lib files used at client side.Files in this directory are loaded before files in any other directory.

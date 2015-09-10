@@ -1,0 +1,44 @@
+<template name="AccountInvite">
+
+    <div id="accountInviteTemplate">
+        <h4>Invitation Request</h4>
+
+        <!-- Errors Starts -->
+        <div class="alert alert-success" role="alert" id="accountInvite-generic-success" style="display: none">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <span>
+                Thanks for showing interest in LetsLeak. We have successfully registered your request.
+                Once it is approved, you will recieve an invitation via an email at <b><span id="requestEmailId"></span></b>.
+            </span>
+        </div>
+
+        <div id="accountInvite-generic-error">
+        </div>
+
+        <div class="error-text hidden">
+            <span class="CA_101">Please enter a valid email address.</span>
+            <span class="105">It seems an account already exists with this email address or you have already requested for an invitation.</span>
+        </div>
+        <!-- Errors Ends -->
+
+        <form class="form-horizontal" role="form" id="accountInviteForm">
+            <div class="form-group" id="emailIdGroup">
+                <!--<label class="col-sm-2 control-label" for="emailId">Email address</label>-->
+                <div class="control-group">
+                    <input type="email" class="form-control" id="emailId" placeholder="Email address">
+                    <span class="error-text"></span>
+                    <span class="help-text hide"> </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="pull-right">
+                    <button type="submit" class="btn btn-default btn-brand" id="getInvitationButton">Request Invite</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="clearfix"></div>
+    </div>
+
+
+</template>

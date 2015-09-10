@@ -1,0 +1,100 @@
+<template name="BucketInsight">
+    <div class="container" id="bucketInsightTemplate">
+        <div class="clearfix"></div>
+        {{#if eq bucketExist true}}
+            <div class="bb-custom-wrapper">
+                <div id="bb-bookblock" class="bb-bookblock">
+                    <div class="bb-item">
+                        {{#with bucketDetails}}
+                        <div class="bb-custom-firstpage">
+                            <p>{{toCapitalize this.f_bucket.f_name}}</p>
+                            <div class="bs-callout bs-callout-info">
+                                <h4>{{toCapitalize this.f_bucket.f_desc}}</h4>
+                            </div>
+
+                            <div class="bucketEditorFooter">
+                                        <span class="pull-left">
+                                            <i class="entypo users" data-toggle="tooltip" data-placement="bottom"
+                                               title="Followers of this bucket." ></i>{{this.f_followCount}}
+                                        </span>
+                                        <span class="pull-left">
+                                            <i class="entypo paper-plane" data-toggle="tooltip" data-placement="bottom"
+                                               title="Number of post in this bucket."></i>{{postCount}}
+                                        </span>
+                                {{#unless this.f_bucket.f_isEditable}}
+                                            <span class="pull-left" data-toggle="tooltip" title="Only owner can add content to this bucket." id="isNotEditable">
+                                                <span class="entypo lock"></span>
+                                            </span>
+                                {{/unless}}
+                                <span class="pull-right marginR20">
+                                    <!--{{> Timestamp timestamp=this.f_timestamp}}-->
+                                </span>
+                            </div>
+                        </div>
+                            {{#if neq postCount 0}}
+                                {{#with firstPost}}
+                                      <div class="bb-custom-side {{this.f_color}}">
+                                        {{> _BucketStatusMessageTemplate post = this }}
+                                      </div>
+                                {{/with}}
+                                {{else}}
+                                  <div class="bb-custom-side">
+                                    <div class="b-insight-l-page-txt"> <p style="font-size: 1em;top: 25%;">There is nothing to view in this bucket.</p></div>
+                                  </div>
+                            {{/if}}
+                        {{/with}}
+                    </div>
+                    {{#each post}}
+                        {{#if this.isLast}}
+                            {{initOnce}}
+                        {{else}}
+                            <div class="bb-item">
+                                <div class="bb-custom-side {{this.left.f_color}}" id="{{this.left._id}}">
+                                    {{> _BucketStatusMessageTemplate post =  this.left }}
+                                </div>
+                                {{#if this.right._id}}
+                                <div class="bb-custom-side {{this.right.f_color}}" id="{{this.right._id}}">
+                                    {{> _BucketStatusMessageTemplate post = this.right }}
+                                </div>
+                                {{else}}
+                                <div class="b-insight-l-page-txt"> <p>To be continued ... </p></div>
+                                {{/if}}
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+                <nav>
+                    <a href="/" class="leak-logo-sm bucket-insight-logo"><span></span></a>
+
+                    <a id="bb-nav-first" href="#" class="bb-nav btn btn-default"><i class="fa fa-step-backward"></i></a>
+                    <a id="bb-nav-prev" href="#" class="bb-nav btn btn-default"><i class="fa fa-chevron-left"></i></a>
+                    <a id="bb-nav-next" href="#" class="bb-nav btn btn-default"><i class="fa fa-chevron-right"></i></a>
+                    <!--<a id="bb-nav-last" href="#" class="bb-nav bb-custom-icon bb-custom-icon-last">Last page</a>-->
+                </nav>
+            </div> <!-- custom-wrapper -->
+        {{else}}
+            {{> NotFound}}
+        {{/if}}
+    </div> <!-- container -->
+    {{> AddToBucket }}
+
+</template>
+
+<template name="_BucketStatusMessageTemplate">
+
+    <div class="bucket-insight-footer">
+        <button type="button" class="btn btn-default icon pull-left" id="addToBucketButton" value="{{post._id}}">
+            <span class="entypo bucket"></span>
+            <span class="entypo plus"></span>
+        </button>
+        <a class="btn btn-default icon pull-right" target="_blank" href="{{pathFor 'status.message' _id=post._id}}">
+            <span class="entypo level-down"></span>
+        </a>
+        <span class="pull-right marginR20 fontClass-white">
+            <!--{{> Timestamp timestamp=post.f_timestamp}}-->
+        </span>
+    </div>
+    <div class="{{setFontClass post.f_color}} {{post.f_color}}">
+        <p>{{post.f_message}}</p>
+    </div>
+</template>

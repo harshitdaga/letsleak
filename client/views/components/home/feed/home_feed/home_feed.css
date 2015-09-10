@@ -1,0 +1,268 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+/*****************************************************************************/
+/* HomeFeed: Style */
+/*****************************************************************************/
+#homeFeedTemplate {
+    margin-top: 50px;
+    position: relative;
+    margin-bottom: 5%;
+}
+#homeFeedTemplate #pageCont {
+    margin: 10% auto;
+}
+.list-group-item {
+    border: none !important;
+    background-color: transparent;
+}
+
+#bucketPostListTemplate #postList .posted-message .thumbnail, .inbox-post-message .thumbnail, #homeFeedTemplate .thumbnail {
+    margin-bottom: 0;
+    padding: 20px;
+}
+#bucketPostListTemplate #postList .posted-message .thumbnail h4, .inbox-post-message .thumbnail h4, #homeFeedTemplate .thumbnail h4 {
+    line-height: 1.3em;
+    text-align: center;
+    font-size: 16px;
+    white-space: normal;
+    word-wrap: break-word;
+    /* wrap long text and urls */
+    /*white-space: pre; *//* CSS 2.0 *//*
+    white-space: pre-wrap; *//* CSS 2.1 *//*
+    white-space: pre-line; *//* CSS 3.0 *//*
+    white-space: -pre-wrap; *//* Opera 4-6 *//*
+    white-space: -o-pre-wrap; *//* Opera 7 *//*
+    white-space: -moz-pre-wrap; *//* Mozilla *//*
+    word-wrap: break-word; *//* IE 5+ *//*
+    word-break: keep-all;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;*/
+}
+.homeFeedFooter .fa, .homeFeedFooter .glyphicon {
+    font-size: .8em;
+}
+.homeFeedFooter #statusLikeUnlikeTemplate, .homeFeedFooter #statusLikeUnlikeTemplate span, #homeFeedTemplate #timestamp {
+    float: left;
+}
+.homeFeedFooter #timestampTemplate span {
+    padding: 0 10px;
+}
+.homeFeedFooter #like, .homeFeedFooter #unlike, .homeFeedFooter #addToBucketButton.btn-default, .homeFeedFooter .btn-default {
+    padding: 1px 5px !important;
+}
+.homeFeedFooter #addToBucketButton.btn-default {
+    margin: 2px 0 0 10px;
+}
+#bucketPostListTemplate #postList .posted-message .thumbnail, .inbox-post-message .message .thumbnail {
+    position: relative;
+}
+#bucketPostListTemplate #postList .posted-message .thumbnail, .inbox-post-message .message .thumbnail, #homeFeedTemplate #pageCont .thumbnail {
+    border-radius: 2px;
+    border: none;
+    min-height: 300px;
+    box-shadow: 0 1px 2px #cccccc;
+    color: #ffffff !important;
+}
+#bucketPostListTemplate #postList .posted-message ul,.inbox-post-message .message ul, #homeFeedTemplate #pageCont ul {
+    padding: 0;
+    margin: 0;
+}
+#bucketPostListTemplate #postList .posted-message .list-group-item, .inbox-post-message .message .list-group-item , #homeFeedTemplate #pageCont .list-group-item {
+    float: left;
+    margin-bottom: 2%;
+}
+#bucketPostListTemplate #postList .posted-message .thumbnail, .inbox-post-message .message .thumbnail, #homeFeedTemplate #pageCont .thumbnail {
+    min-height: 300px;
+    display: table;
+    width: 100%;
+}
+@-moz-document url-prefix() {
+    #bucketPostListTemplate #postList .posted-message .thumbnail, .inbox-post-message .message .thumbnail, #homeFeedTemplate #pageCont .thumbnail {
+        display: inherit !important;
+    }
+}
+#bucketPostListTemplate #postList .posted-message .thumbnail div, .inbox-post-message .message .thumbnail div, #homeFeedTemplate #pageCont .thumbnail div {
+    display: table-cell;
+    vertical-align: middle;
+}
+#bucketPostListTemplate #postList .posted-message .homeFeedFooter, .inbox-post-message .homeFeedFooter, #homeFeedTemplate {
+    margin: 50px auto;
+    width: 960px;
+}
+#bucketPostListTemplate #postList .posted-message .list-group-item, .inbox-post-message .message .list-group-item, #homeFeedTemplate #pageCont .list-group-item {
+    width: 49%;
+    margin-right: inherit;
+}
+#bucketPostListTemplate #postList .posted-message .list-group-item, .inbox-post-message .message .list-group-item {
+    width: 100% !important;
+}
+#bucketPostListTemplate #postList .posted-message .thumbnail, .inbox-post-message .message .thumbnail, #homeFeedTemplate #pageCont .thumbnail {
+    min-height: 300px;
+    display: table;
+    width: 100%;
+}
+.inbox-post-message .message .thumbnail .thumbnailContainer, #homeFeedTemplate #pageCont .thumbnail .thumbnailContainer {
+    display: table-cell;
+    vertical-align: middle;
+    max-width: 100px;
+}
+@-moz-document url-prefix() {
+    #bucketPostListTemplate #postList .posted-message .thumbnail, .inbox-post-message .message .thumbnail, #homeFeedTemplate #pageCont .thumbnail {
+        display: table !important;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        min-height: 300px !important;
+    }
+    #bucketPostListTemplate #postList .posted-message .thumbnail, .inbox-post-message .message .thumbnail .thumbnailContainer, #homeFeedTemplate #pageCont .thumbnail .thumbnailContainer {
+        display: table-cell;
+        height: 100%;
+        min-height: 280px;
+        text-align: center;
+        top: 50%;
+        vertical-align: middle;
+        *position: absolute;
+    }
+    #bucketPostListTemplate #postList .posted-message .thumbnail h4, .inbox-post-message  .message .thumbnail h4, #homeFeedTemplate #pageCont .thumbnail h4 {
+        *position: relative;
+        top: -50%;
+    }
+}
+
+/* low end versions of Safari home feed hack */
+
+/* Safari 6.1-7.0 */
+
+::i-block-chrome,#bucketPostListTemplate #postList .posted-message .thumbnail, .inbox-post-message .message .thumbnail, #homeFeedTemplate #pageCont .thumbnail {
+    display: inherit;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    min-height: 300px !important;
+}
+
+::i-block-chrome,#bucketPostListTemplate #postList .posted-message .thumbnail, .inbox-post-message .message .thumbnail .thumbnailContainer, #homeFeedTemplate #pageCont .thumbnail .thumbnailContainer {
+    display: inherit;
+    height: 100%;
+    min-height: 280px;
+    text-align: center;
+    top: 50%;
+    vertical-align: middle;
+    *position: absolute;
+}
+::i-block-chrome,#bucketPostListTemplate #postList .posted-message .thumbnail, .inbox-post-message .message .thumbnail h4, #homeFeedTemplate #pageCont .thumbnail h4 {
+    *position: relative;
+    top: -50%;
+}
+
+/* Safari hack end */
+
+/*.inbox-post-message .homeFeedFooter, .homeFeedFooter {
+    position: absolute;
+    bottom: 5px;
+    width: 93%;
+    z-index: 9;
+}
+.inbox-post-message .homeFeedFooter, .homeFeedFooter {
+    padding-top: 10px;
+    font-size: .7em;
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+}*/
+#bucketPostListTemplate #postList .posted-message .homeFeedFooter, .inbox-post-message .homeFeedFooter, .homeFeedFooter {
+    position: absolute;
+    bottom: 0;
+    z-index: 8;
+    width: 90%;
+    font-size: .7em;
+}
+#bucketPostListTemplate #postList .posted-message .homeFeedFooter a, .inbox-post-message .homeFeedFooter a {
+    color: #ffffff;
+}
+#bucketPostListTemplate #postList .posted-message .homeFeedFooter, .inbox-post-message .homeFeedFooter {
+    margin: 0;
+    width: 100%;
+    left: 0;
+}
+#bucketPostListTemplate #postList .posted-message .homeFeedFooter .btn, .inbox-post-message .homeFeedFooter .btn, .homeFeedFooter .btn {
+    border-radius: 30px;
+    background: transparent;
+    border: none;
+    margin: 0 !important;
+    padding: 0 10px !important;
+}
+#bucketPostListTemplate #postList .posted-message .homeFeedFooter .btn, .inbox-post-message .homeFeedFooter .btn {
+    font-size: 2.5em !important;
+}
+#bucketPostListTemplate #postList .posted-message {
+    float: left;
+    width: 50%;
+    border-left: 1px solid #cccccc;
+    display: flex;
+    height: 100%;
+}
+#bucketPostListTemplate #postList .posted-message .list-group-item {
+    width: 100% !important;
+    height: 100% !important;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+#bucketPostListTemplate #postList .posted-message ul {
+    width: 98% !important;
+    margin: auto !important;
+}
+#bucketPostListTemplate #postList .posted-message ul li.list-group-item {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.homeFeedFooter .btn:active, .homeFeedFooter .btn:focus, .homeFeedFooter .btn:hover {
+    box-shadow: none !important;
+}
+.homeFeedFooter-bg {
+    background-color: #ffffff;
+    height: 35px;
+    width: 100%;
+    opacity: .1;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#homeFeedTemplate #pageCont .list-group-item .thumbnail .homeFeedFooter .btn {
+    font-size: 1.4em;
+    padding-right: 0 !important;
+}
+#homeFeedTemplate #pageCont .list-group-item .thumbnail .homeFeedFooter .btn.addtoBucketIcon span:first-child {
+    padding-left: 0;
+}
+#homeFeedTemplate #pageCont .list-group-item .thumbnail .homeFeedFooter .btn.addtoBucketIcon {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.homeFeedFooter #like, .homeFeedFooter #unlike {
+    padding: 1px 0 !important;
+}
+.homeFeedFooter #statusLikeUnlikeTemplate .statusMessageLikeCount {
+    font-size: 1.2em;
+}

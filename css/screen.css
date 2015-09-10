@@ -1,0 +1,1506 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+
+
+/* Media Queries start */
+
+@-ms-viewport {
+    width: device-width;
+}
+@media screen and (max-width: 830px) {
+    .carousel-indicators li, .carousel-indicators .active {
+        width: 40px;
+        height: 40px;
+        margin: 0 2px;
+        background-color: #fff;
+        border-radius: 30px;
+        border: 1px solid #fff;
+        background-size: 150% !important;
+    }
+    #welcomeTempalate .letsleak-tour .carousel-postMessageIcon {
+        background: url("/images/sprite_icons.svg")no-repeat -6px -440px;
+        background-color: #9E0E12;
+    }
+    #welcomeTempalate .letsleak-tour .carousel-messageIcon {
+        background: url("/images/sprite_icons.svg")no-repeat -10px -400px;
+        background-color: #D75300;
+    }
+    #welcomeTempalate .letsleak-tour .carousel-addUpdateBucketIcon {
+        background: url("/images/sprite_icons.svg")no-repeat -10px -475px;
+        background-color: #334F0A;
+    }
+    #welcomeTempalate .letsleak-tour .carousel-bucketIcon {
+        background: url("/images/sprite_icons.svg")no-repeat -10px -360px;
+        background-color: #3F3F3F;
+    }
+}
+@media screen and (max-width: 320px) {
+    #loginTemplate, #accountInviteTemplate {
+        width: 92%;
+    }
+    .login-window {
+        height: 100%;
+    }
+    .groupSeparator p:before, .groupSeparator p:after {
+        float: none !important;
+    }
+    .groupSeparator, .groupSeparator p {
+        width: 100%;
+    }
+    .leak-logo-lg, .leak-logo-md {
+        display: none !important;
+    }
+    #seeAllNotificationTemplate {
+        margin: 15% auto;
+    }
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    #homeFeedTemplate #pageCont .list-group-item {
+        width: 100%;
+    }
+    #savePostButton:before {
+        content: "";
+    }
+    #savePostButton i {
+        display: block;
+    }
+    #statusBox .btn-publish {
+        border: none;
+        width: auto;
+        color: #3c3c3c;
+        margin: 0;
+    }
+    #statusBox .btn-publish .fa-trash-o {
+        top: -8px !important;
+        position: relative;
+    }
+    .color-tools button {
+        float: left;
+    }
+    #neverExpire {
+        display: none !important;
+    }
+    .options-bar .fa-comments, .options-bar .fa-clock-o {
+        font-size: 1.3em;
+        margin-left: 10px;
+    }
+    .options-bar span, .options-bar span input[type="checkbox"], #eventuallyExpire span {
+        display: inline-flex;
+        float: left;
+    }
+    #eventuallyExpire span {
+        margin: 2px;
+        line-height: 12px;
+    }
+    .options-bar span input[type="checkbox"] {
+        margin-top: 10px !important;
+    }
+    #eventuallyExpire input[type="text"] {
+        padding: 0;
+        background-color: transparent;
+        float: left;
+        border: 1px solid #ccc;
+        text-align: center;
+        border-radius: 2px;
+        height: 20px;
+        line-height: 12px;
+    }
+    .options-bar #eventuallyExpire, .options-bar #neverExpire {
+        margin: 0 !important;
+    }
+    .modal-content .modal-body #post #textarea {
+        /*border: 1px solid #c9c9c9 !important;*/
+        width: 70% !important;
+        bottom: 30% !important;
+        top: 15% !important;
+    }
+    .options-bar#commentAllowed .clearfix, .options-bar#expiryTime .clearfix {
+        display: block !important;
+    }
+    .options-bar span, .options-bar span input[type="checkbox"] {
+        margin: 0 10px;
+    }
+    .alterColor {
+        width: 100%;
+    }
+    #addUpdateBucketTemplate {
+        margin: 20% auto;
+        border: none;
+    }
+    #statusMessageTemplate #leftPanel {
+        width: auto;
+        min-height: inherit;
+    }
+    .statusMsgTempContainer {
+        margin: 14% 0 auto 2% !important;
+    }
+    #statusMessageTemplate #leftPanel .statusMessage {
+        min-height: 250px !important;
+    }
+    #statusMessageTemplate .leftPanel #rightPanel {
+        width: 98%;
+        margin-bottom: 10%;
+    }
+    #statusMessageTemplate #leftPanel {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .bb-custom-firstpage .bucketEditorFooter {
+    font-size: .7em;
+    }
+    .bb-custom-firstpage p {
+    font-size: 1.3em;
+    }
+        a.leak-logo-sm.bucket-insight-logo {
+        margin: 2px 0 0 20px;
+    }
+    #bucketPostListTemplate #postList .posted-message {
+        width: 100%;
+        border: none;
+    }
+    #postListModal #bucketPostListTemplate #postList ul {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 500px) {
+    body {
+        background-color: transparent;
+    }
+    @-moz-document url-prefix() {
+        .nav-header-icons {
+            width: 36% !important;
+        }
+    }
+    .nav-header-icons {
+        width: 30%;
+        text-align: right;
+    }
+    #homeFeedTemplate #pageCont .list-group-item {
+        width: 100% !important;
+    }
+    .home-clip-intro ul li p {
+        display: none;
+    }
+    .home-clip-intro ul li {
+        margin-right: 0 !important;
+    }
+    .home-clip-intro span {
+        margin: 2% !important;
+    }
+    .home-clip-one ul {
+        width: auto !important;
+        margin: inherit !important;
+    }
+    .home-clip-one ul li {
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        margin: 5% 3% !important;
+        background-position-x: center !important;
+    }
+    .user-comment span:first-child, .user-bucket span:first-child, .user-post span:first-child, .user-book span:first-child {
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+    .user-comment span + span, .user-bucket span + span, .user-post span + span, .user-book span + span {
+        width: 100%;
+    }
+    #notificationTemplate .dropdown-menu {
+        left: -200px;
+    }
+    /*.bb-custom-firstpage h1 {
+        font-size: 1.5em;
+    }*/
+    #addToBucketTemplate #bucketList {
+        overflow-y: auto;
+        max-height: 475px;
+    }
+    #bucketList #userBucketList {
+        border: none;
+    }
+    .modal-dialog.modal-lg {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    .landing-logo-hold {
+        display: none;
+    }
+    .leak-logo-sm span:first-child {
+        margin: 2% auto;
+    }
+    #homeFeedTemplate #pageCont .thumbnail {
+        min-height: 250px;
+    }
+    .options-bar button.btn-primary#savePostButton, .options-bar button.btn-secondary#cancelPostButton {
+        padding: 10px !important;
+    }
+    #savePostButton i, #cancelPostButton i {
+        display: block;
+    }
+    #statusBox .btn-publish {
+        border: none;
+        width: auto;
+        color: #3c3c3c;
+    }
+    #commentAllowed label, #expiryTime label {
+        width: 100%;
+        font-size: .8em;
+    }
+    .modal-content#postContent i {
+        font-size: 1.2em !important;
+        color: #ffffff;
+    }
+    .modal-content .modal-body #post #textarea {
+        width: 90% !important;
+        bottom: 30% !important;
+        top: 20% !important;
+    }
+    .options-bar .fa-comments, .options-bar .fa-clock-o {
+        font-size: 1.3em;
+    }
+    .options-bar#commentAllowed .clearfix, .options-bar#expiryTime .clearfix {
+        display: none;
+    }
+    .options-bar span, .options-bar span input[type="checkbox"] {
+        margin: 0;
+    }
+    #neverExpire {
+        display: none !important;
+    }
+    .options-bar span, .options-bar span input[type="checkbox"] {
+        margin: 0 !important;
+    }
+    #eventuallyExpire input[type="text"] {
+        padding: 0;
+        background-color: transparent;
+        float: none !important;
+        border: 1px solid #ccc;
+        text-align: center;
+        border-radius: 2px;
+        height: 20px;
+        line-height: 12px;
+        width: 35%;
+        font-size: .8em;
+    }
+    .options-bar #eventuallyExpire, .options-bar #neverExpire {
+        margin: 5px 0 0 !important;
+        text-align: center;
+    }
+    #addUpdateBucketTemplate .bucketName, #addUpdateBucketTemplate .advancedSetting {
+        width: 100%;
+    }
+    #addUpdateBucketTemplate .groupSeparator {
+        display: none;
+    }
+    .updateBucketListContainer .alterColor {
+        width: 100%;
+    }
+    #statusMessageTemplate #leftPanel .statusMessage {
+        min-height: 170px;
+    }
+    .statusMsgTempContainer {
+        margin: 10% 2%;
+    }
+    #statusMessageTemplate .leftPanel #rightPanel {
+        width: 100% !important;
+        float: left;
+        margin-bottom: 6%;
+    }
+    #statusMessageTemplate #leftPanel {
+        width: 100%;
+        min-height: 200px;
+    }
+    .color-tools-cont {
+        display: block !important;
+        width: auto !important;
+        top: 0 !important;
+        position: static !important;
+        text-align: center;
+    }
+    .color-tools button {
+        float: left;
+    }
+    .modal-content .modal-body #post #textarea {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 500px) {
+    /*.bb-custom-wrapper {
+        height: 70% !important;
+        width: 100% !important;
+        margin: auto !important;
+        min-height: 450px;
+    }
+    .bb-custom-wrapper > nav {
+        width: 100%;
+        position: fixed;
+        top: 35%;
+        z-index: 1000;
+        text-align: center;
+        left: 0;
+    }*/
+    #homeFeedTemplate #pageCont .list-group-item {
+        width: 49%;
+    }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+    #addUpdateBucketTemplate, .updateBucketListContainer, #seeAllNotificationTemplate {
+        width: 100%;
+    }
+    #homeFeedTemplate #pageCont .list-group-item, #footerTemplate, .container-fluid {
+        width: 100%;
+    }
+    #homeFeedTemplate #pageCont .list-group-item {
+        margin-right: 0;
+    }
+    #statusMessageTemplate #leftPanel .statusMessage{
+        width: 100%;
+        min-height: 50px;
+        border-right: none;
+    }
+    #statusMessageTemplate #leftPanel #statusMessageContent #message {
+        min-height: 180px;
+    }
+    #statusMessageTemplate .leftPanel #rightPanel {
+        width: auto;
+        float: left;
+    }
+    #bucketList #userBucketList {
+        width: auto;
+    }
+    .modal-dialog.modal-md {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    #bucketList #userFollowBucketListMessage, #bucketList #followingBucketList {
+        width: auto;
+        clear: both;
+    }
+    #bucketList #userFollowBucketListMessage {
+        margin-top: 0;
+    }
+    #bucketTemplate, #bucketEditorSelectionTemplate {
+        width: auto;
+    }
+    .navbar .logo-icon {
+        margin: -8% auto !important;
+    }
+    .leak-logo-lg, .leak-logo-md {
+        display: none !important;
+    }
+    #notificationTemplate .dropdown-menu, #notificationTemplate ul {
+        max-height: 200px;
+    }
+    #statusMessageTemplate .leftPanel #rightPanel {
+        width: 100%;
+        float: left;
+        margin-bottom: 6%;
+    }
+    #statusMessageTemplate #leftPanel {
+        width: 100%;
+        min-height: 200px;
+    }
+    #statusMessageTemplate #leftPanel .statusMessage {
+        min-height: 170px;
+    }
+    .statusMsgTempContainer {
+        margin: 10% 2%;
+    }
+    #statusMessageTemplate .leftPanel #rightPanel {
+        width: 100% !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    #bucketPostListTemplate #postList .posted-message {
+        display: none;
+    }
+    #postListModal #bucketPostListTemplate #postList ul {
+        width: 100%;
+    }
+    .staticMobileMenu {
+        display: block !important;
+    }
+    #readTemplate #options-panel {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 900px) {
+    .home-mobile-content-view ul li:nth-child(odd) div {
+        position: static;
+    }
+    .home-mobile-content-view ul li:nth-child(odd) p {
+        margin: 0 auto 0;
+        font-size: 1.5em;
+        width: 100%;
+    }
+    .home-mobile-content-view ul li:nth-child(odd) span {
+        background-size: 100%;
+        height: 90px;
+        width: 100px;
+    }
+    .home-mobile-content-view ul li {
+        height: 150px;
+    }
+    .home-mobile-content-view ul li:nth-child(even) {
+        height: 100%;
+    }
+    .home-mobile-content-view ul li:nth-child(odd) div.post-img {
+        background-size: 60% 90%;
+        right: 0;
+        float: right;
+        margin-top: 30px;
+        background-position: 90% top;
+        height: 130px;
+    }
+    .home-mobile-content-view ul li:nth-child(odd) div.home-feed-img {
+        float: right;
+        margin-top: 25px;
+    }
+    .home-mobile-content-view ul li:nth-child(odd) div.bucket-img {
+        background-size: 55% 70%;
+        float: right;
+        margin-top: 0;
+    }
+    .home-mobile-content-view ul li:nth-child(odd) div.bucket-insight-img {
+        background-size: 55% 65%;
+        float: right;
+        margin-top: -10px;
+    }
+    .home-desk-content-view, .index-knowmore {
+        display: none;
+    }
+    .home-mobile-content-view, .index-knowmore {
+        display: block;
+    }
+    .home-mobile-content-view .index-home-feed span {
+        background: url("/images/sprite_icons.svg")no-repeat left -89px;
+    }
+    .home-mobile-content-view .index-bucket span {
+        background: url("/images/sprite_icons.svg")no-repeat left -179px;
+    }
+    .home-mobile-content-view .index-bucket-insight span, .home-desk-content-view .index-bucket-insight span {
+        background: url("/images/sprite_icons.svg")no-repeat left -268px;
+    }
+}
+@media screen and (max-width: 570px) {
+    .home-mobile-content-view ul li:nth-child(even) div {
+        width: 90%;
+    }
+    .home-mobile-content-view ul li:nth-child(odd) div.bucket-img, .home-mobile-content-view ul li:nth-child(odd) div.bucket-insight-img {
+        background-position: center;
+    }
+    .home-mobile-content-view ul li:nth-child(odd) div.post-img {
+        background-position: center top;
+    }
+}
+@media screen and (min-width: 730px) and (max-width: 991px) {
+    .landing-logo-hold {
+        margin: 2% 0 2% 20%;
+    }
+}
+@media screen and (max-width: 750px) {
+    #homeFeedTemplate {
+        margin: 20% auto !important;
+        width: 100%;
+    }
+    .statusMessageCont {
+        margin: 18% auto !important;
+        padding: 2% !important;
+    }
+    #readTemplate #options-panel ul.nav-stacked {
+        width: 100%;
+    }
+    .staticMobileMenu {
+        display: block !important;
+    }
+    #readTemplate #options-panel {
+        display: none !important;
+    }
+}
+
+/* Small Devices */
+
+@media screen and (max-width: 570px) and (orientation : landscape) {
+    .staticMobileMenu {
+        display: block !important;
+    }
+    #readTemplate #options-panel {
+        display: none !important;
+    }
+    #homeFeedTemplate {
+        margin: 25% auto !important;
+    }
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        border: 0;
+    }
+    .navbar-nav .dropdown-toggle .userName {
+        display: none !important;
+    }
+    .navbar-collapse, .navbar-nav .dropdown-toggle .fa.fa-bars {
+        display: block !important;
+    }
+    @-moz-document url-prefix() {
+        .nav-header-icons {
+            width: 27% !important;
+        }
+    }
+    .nav-header-icons {
+        width: 25%;
+        text-align: right;
+    }
+    .nav-header-icons .navbar-nav {
+        margin-left: 0 !important;
+    }
+    .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+        margin: 0 !important;
+    }
+    /*.bb-custom-wrapper {
+        min-height: 220px !important;
+    }
+    .bb-custom-firstpage h1 {
+        font-size: 1em;
+        padding: 1em;
+    }
+    .bb-custom-firstpage, .bb-custom-side {
+        min-height: 220px;
+    }*/
+    .home-clip-intro ul li p {
+        display: none;
+    }
+    .home-clip-intro ul li {
+        margin-right: 0 !important;
+    }
+    .home-clip-intro span {
+        margin: 2% !important;
+    }
+    .home-clip-one ul {
+        width: auto !important;
+        margin: inherit !important;
+    }
+    .home-clip-one ul li {
+        padding-top: 3% !important;
+        padding-left: 0 !important;
+        margin: 5% 3% !important;
+        background-position-x: center !important;
+    }
+    #statusMessageTemplate .leftPanel {
+        min-height: inherit;
+    }
+    #commentAllowed, #expiryTime {
+        width: 35%;
+    }
+    .options-bar label {
+        display: block;
+    }
+    .color-tools-cont {
+        display: block !important;
+        width: auto !important;
+        top: 0 !important;
+        position: static !important;
+        text-align: center;
+    }
+    .color-tools button {
+        float: left;
+    }
+    .modal-content .modal-body #post #textarea {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 300px) {
+    .floating-generic-error {
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        top: 40px;
+    }
+    #footerTemplate, .container-fluid, #bucketTemplate, #seeAllNotificationTemplate, #bucketEditorSelectionTemplate {
+        width: 100%;
+    }
+    #homeFeedTemplate #pageCont .list-group-item {
+        width: 48%;
+    }
+    #seeAllNotificationTemplate, #inboxTemplate, #settingsTemplate, #welcomeTempalate{
+        /*background-color: #ffffff;*/
+        width: 98%;
+        padding: 10px;
+    }
+    #homeFeedTemplate #pageCont ul {
+        margin: 1%;
+    }
+    .navbar-nav {
+        margin: inherit;
+    }
+    /*.bb-custom-wrapper {
+        height: 70%;
+        width: 100%;
+        margin: 7% auto;
+        min-height: 450px;
+    }
+    .bb-custom-wrapper > nav {
+        width: 100%;
+        left: 0;
+    }
+    .bb-custom-firstpage {
+        padding-top: 5%;
+    }*/
+    #statusMessageTemplate #leftPanel #statusMessageContent #message {
+        min-height: 180px;
+    }
+    #statusMessageTemplate .leftPanel #rightPanel {
+        width: auto;
+        float: left;
+        padding: 15px;
+    }
+    #bucketList #userBucketList {
+        width: auto;
+    }
+    .modal-dialog.modal-md {
+        top: 5%;
+        right: 5%;
+        bottom: 5%;
+        left: 5%;
+    }
+    #bucketList #userFollowBucketListMessage {
+        margin-top: 0;
+    }
+    .navbar .logo-icon {
+        margin: -8% auto !important;
+    }
+    .groupSeparator p:before {
+        background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0), #000);
+        background: linear-gradient(to left, rgba(0, 0, 0, 0), #000);
+        margin-right: 10px;
+    }
+    .groupSeparator p:after {
+        background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), #000);
+        background: linear-gradient(to right, rgba(0, 0, 0, 0), #000);
+        margin-left: 10px;
+    }
+    .groupSeparator p:before, .groupSeparator p:after {
+        height: 1px;
+        text-align: center;
+        width: 100px;
+    }
+    .groupSeparator p {
+        overflow: hidden;
+        text-align: center;
+        display: inline-block;
+    }
+}
+/* Medium Devices */
+
+@media (max-width: 768px) {
+    .statusMessageLeftCont, .statusMessageRightCont {
+        width: 100% !important;
+    }
+}
+@media (min-width: 768px) {
+    #homeFeedTemplate {
+        width: 100%;
+    }
+    .staticMobileMenu {
+        display: none !important;
+    }
+    .home-clip-one ul {
+        width: 90%;
+    }
+    .inviteRequest #accountInviteTemplate {
+        width: 90% !important;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-4 {
+        width: 32%;
+        margin: 0.5%;
+    }
+    .login-window, #forgotPasswordTemplate, #createAccountTemplate {
+        width: auto;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 767px) {
+    /* As part of modal box open, .model-open class is added to boady
+     * Preventing the body to scroll when modal box is opened.
+    */
+    .modal-open{
+        overflow: hidden;
+        position: fixed;
+    }
+    #footerTemplate {
+        display: none;
+    }
+    .home-login-bg {
+        background-image: none;
+    }
+    .home-top-arw a {
+        background: url("/images/home-top-arw-black.png") no-repeat;
+    }
+    .inbox-message-cotainer .inbox-content, .inbox-message-cotainer .inbox-post-message {
+        width: 100%;
+    }
+    .floating-generic-error {
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        top: 40px;
+    }
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        border: 0;
+    }
+    .navbar-nav .dropdown-toggle .userName {
+        display: none !important;
+    }
+    .navbar-collapse, .navbar-nav .dropdown-toggle .fa.fa-bars{
+        display: block !important;
+    }
+    .dropdown-toggle.mobileMenu {
+        font-size: 2em;
+        margin: 0;
+        padding: 10px 0 0 0;
+    }
+    .nav-header-icons .navbar-nav {
+        margin-left: 0 !important;
+    }
+    .container-fluid > .navbar-collapse {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 15%;
+    }
+    .navbar-nav.navbar-right:last-child {
+        margin:0 !important;
+        /*padding: 8px 0 0 0 !important;*/
+    }
+    .navbar-nav {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .modal-dialog.modal-lg {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    #statusMessageContent #statusLikeUnlikeTemplate span.statusMessageLikeCount {
+        padding-top: 10px;
+    }
+    .statusMessageLeftCont, .statusMessageRightCont {
+        width: 100% !important;
+    }
+    .home-clip-one ul {
+        width: auto!important;
+    }
+    #footerTemplate, .container-fluid {
+        width: 100%;
+    }
+    .navbar-nav {
+        margin: inherit;
+        /*width: 40%;*/
+        margin-left: 2%;
+        max-height: 35px;
+    }
+    .navbar-nav .open .dropdown-menu {
+        position: absolute;
+        background-color: #ffffff;
+        max-height: 250px !important;
+        border: 1px solid #cccccc;
+    }
+    #notificationTemplate ul {
+        max-height: 150px !important;
+    }
+    #notificationTemplate .footer {
+        /*top: 248px !important;*/
+    }
+    #notificationTemplate .glyphicon-flash {
+        top: 5px;
+    }
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        z-index: 1050;
+    }
+    #homeFeedTemplate #pageCont .list-group-item {
+        margin-right: inherit;
+    }
+    .login-window, #forgotPasswordTemplate, #createAccountTemplate {
+        width: auto;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        top: 0;
+        position: static;
+    }
+    .landing-logo-hold {
+        display: none;
+    }
+    .leak-logo-sm span:first-child {
+        margin: 3% auto !important;
+    }
+    #loginTemplate, #accountInviteTemplate {
+        width: 92%;
+    }
+    .groupSeparator {
+        display: none;
+    }
+    #addUpdateBucketTemplate .bucketName, #addUpdateBucketTemplate .advancedSetting {
+        width: 100%;
+    }
+    #addUpdateBucketTemplate .groupSeparator {
+        display: none;
+    }
+    .updateBucketListContainer .alterColor {
+        width: 100%;
+    }
+    #userBucketTemplate {
+        margin: 5% auto;
+    }
+    #settingsTemplate #options-panel {
+        width: 100%;
+        border-right: none;
+        min-height: inherit;
+        border-bottom: 1px solid #ccc;
+    }
+    #settingsTemplate #options-panel .nav-stacked > li,#readTemplate #options-panel .nav-stacked > li {
+        float: left;
+    }
+    #settingsTemplate #settings-container-panel,#readTemplate #read-container-panel {
+        width: 100%;
+    }
+    #settingsTemplate #settings-container-panel hr,#readTemplate #read-container-panel hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #settingsTemplate #settings-container-panel .form-group label {
+        display: none;
+    }
+    #seeAllNotificationTemplate, #inboxTemplate, #settingsTemplate, #readTemplate, #welcomeTempalate {
+        margin: 10% auto !important;
+    }
+}
+@media (min-width: 765px) and (max-width: 991px) {
+    .floating-generic-error {
+        position: fixed;
+        z-index: 999;
+        width: 960px;
+        top: 40px;
+    }
+    #homeFeedTemplate {
+        margin: 50px auto;
+        width: 100%;
+    }
+    .modal-dialog.modal-lg {
+        width: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    .nav-header-icons {
+        width: 20%;
+        text-align: right;
+    }
+    #statusMessageContent #statusLikeUnlikeTemplate span.statusMessageLikeCount {
+        padding-top: 10px;
+    }
+    #loginTemplate, #accountInviteTemplate {
+        width: 40%;
+    }
+    #savePostButton:before, #cancelPostButton i {
+        content: "";
+    }
+    #savePostButton:before {
+        content: "Save";
+    }
+    #cancelPostButton:before {
+        content: "Cancel";
+    }
+    #savePostButton i, #cancelPostButton i {
+        display: none;
+    }
+    #statusBox .btn-publish {
+        border: none;
+        width: auto;
+        color: #3c3c3c;
+    }
+    .modal-content .modal-body #post #textarea {
+        /*border-bottom: 1px solid #c9c9c9 !important;*/
+        bottom: 30% !important;
+        top: 15% !important;
+    }
+    .options-bar .fa-comments, .options-bar .fa-clock-o {
+        font-size: 1.3em;
+        margin-left: 10px;
+    }
+    .options-bar#commentAllowed .clearfix, .options-bar#expiryTime .clearfix {
+        display: none !important;
+    }
+    .options-bar span, .options-bar span input[type="checkbox"] {
+        margin: 0;
+    }
+    #neverExpire {
+        display: none !important;
+    }
+    .options-bar span, .options-bar span input[type="checkbox"] {
+        margin: 0 !important;
+    }
+    #eventuallyExpire input[type="text"] {
+        padding: 0;
+        background-color: transparent;
+        float: none !important;
+        border: 1px solid #ccc;
+        text-align: center;
+        border-radius: 2px;
+        height: 20px;
+        line-height: 12px;
+        font-size: .8em;
+        margin: 2px;
+    }
+    .options-bar #eventuallyExpire, .options-bar #neverExpire {
+        margin: 0 !important;
+        /*float: left !important;*/
+    }
+    #seeAllNotificationTemplate, #inboxTemplate, #settingsTemplate, #readTemplate, #welcomeTempalate {
+        margin: 6% auto !important;
+    }
+    #notificationTemplate .glyphicon-flash {
+        top: 5px !important;
+    }
+    #statusMessageContent #statusLikeUnlikeTemplate span.statusMessageLikeCount {
+        padding-top: 10px;
+    }
+    #postStatusTemplate .postStatusBtn {
+        top:3%;
+    }
+    #savePostButton:before, #cancelPostButton i {
+        content: "";
+    }
+    #savePostButton:before {
+        content: "Save";
+    }
+    #cancelPostButton:before {
+        content: "Cancel";
+    }
+    #savePostButton i, #cancelPostButton i {
+        display: none;
+    }
+    #bucketList #userBucketList {
+        width: 97%;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .inbox-message-cotainer .inbox-content, .inbox-message-cotainer .inbox-post-message {
+        width: 50%;
+    }
+    #readTemplate #options-panel ul.nav-stacked {
+        width: 70%;
+    }
+    #userBucketTemplate {
+        margin: 5% auto;
+    }
+    #postStatusTemplate .postStatusBtn {
+        top:3%;
+    }
+    .nav-header-icons {
+        width: 15% !important;
+    }
+    #footerTemplate, .container-fluid {
+        width: 100%;
+    }
+    #notificationTemplate .glyphicon-flash {
+        top: 10px;
+    }
+    #homeFeedTemplate #pageCont .list-group-item {
+        width: 48%;
+    }
+    .login-window {
+        width: 70%;
+    }
+    .login-window, #forgotPasswordTemplate, #createAccountTemplate {
+        border: 1px solid #ffffff;
+        border-radius: 1px;
+        box-shadow: 0 0px 6px -2px #000000;
+        top: 15%;
+        position: relative;
+        background-color: #f8f8f8;
+    }
+    .login-window {
+        position: static !important;
+    }
+    #forgotPasswordTemplate, #createAccountTemplate {
+        width: 35%;
+    }
+    #statusMessageContent #statusLikeUnlikeTemplate span.statusMessageLikeCount {
+        padding-top: 10px;
+    }
+    #statusMessageTemplate .leftPanel #options #reportAbuseTemplate, #statusMessageTemplate .leftPanel #options #timestampTemplate {
+        margin-top: 5px;
+    }
+    #statusMessageTemplate #leftPanel .statusMessage {
+        width: 100%;
+        padding: 20px;
+        min-height: 420px;
+    }
+    #bucketList #userBucketList {
+        width: 97%;
+    }
+    .modal-dialog.modal-md {
+        top: 10%;
+        right: 20%;
+        bottom: 10%;
+        left: 20%;
+    }
+    #bucketTemplate, #bucketEditorSelectionTemplate {
+        width: 960px;
+    }
+    .mobile-menu {
+        display: none !important;
+    }
+    .groupSeparator p:before {
+        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), #000);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+        margin-top: 10px;
+    }
+    .groupSeparator p:after {
+        background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0), #000);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0), #000);
+        margin-bottom: 10px;
+    }
+    .groupSeparator p:before, .groupSeparator p:after {
+        content: "";
+        height: 100px;
+        vertical-align: middle;
+        width: 1px;
+        margin: 0 4%;
+    }
+    .leak-logo-sm, .leak-logo-lg {
+        display: none;
+    }
+    #savePostButton:before, #cancelPostButton i {
+        content: "";
+    }
+    #savePostButton:before {
+        content: "Save";
+    }
+    #cancelPostButton:before {
+        content: "Cancel";
+    }
+    #savePostButton i, #cancelPostButton i {
+        display: none;
+    }
+    #statusBox .btn-publish {
+        border: none;
+        width: auto;
+        color: #3c3c3c;
+    }
+    .modal-content .modal-body #post #textarea {
+        /*border-bottom: 1px solid #c9c9c9 !important;*/
+        bottom: 30% !important;
+        top: 15% !important;
+    }
+    .options-bar .fa-comments, .options-bar .fa-clock-o {
+        font-size: 1.3em;
+        margin-left: 10px;
+    }
+    .options-bar#commentAllowed .clearfix, .options-bar#expiryTime .clearfix {
+        display: none !important;
+    }
+    .options-bar span, .options-bar span input[type="checkbox"] {
+        margin: 0;
+    }
+    #neverExpire {
+        display: none !important;
+    }
+    .options-bar span, .options-bar span input[type="checkbox"] {
+        margin: 0 !important;
+    }
+    #eventuallyExpire input[type="text"] {
+        padding: 0;
+        background-color: transparent;
+        float: none !important;
+        border: 1px solid #ccc;
+        text-align: center;
+        border-radius: 2px;
+        height: 20px;
+        line-height: 12px;
+        font-size: .8em;
+        margin: 2px;
+    }
+    .options-bar #eventuallyExpire, .options-bar #neverExpire {
+        margin: 0 !important;
+        /*float: left !important;*/
+    }
+    #bucketList #userBucketList {
+        width: 97%;
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .modal-dialog.modal-lg {
+        width: 80%;
+        top: 8%;
+        right: 8%;
+        bottom: 8%;
+        left: 8%;
+    }
+    .nav-header-icons {
+        width: 15% !important;
+    }
+    #savePostButton:before, #cancelPostButton i {
+        content: "";
+    }
+    #savePostButton:before {
+        content: "Save";
+    }
+    #cancelPostButton:before {
+        content: "Cancel";
+    }
+    #savePostButton i, #cancelPostButton i {
+        display: none;
+    }
+    #footerTemplate, .container-fluid, #bucketTemplate, #seeAllNotificationTemplate {
+        /*width: 960px;*/
+        margin: 0 auto;
+    }
+    #loginTemplate, #accountInviteTemplate {
+        width: 40%;
+    }
+    #seeAllNotificationTemplate, #inboxTemplate, #settingsTemplate, #readTemplate, #welcomeTempalate {
+        margin: 5% 1% !important;
+    }
+    #userBucketTemplate, #bucketEditorSelectionTemplate {
+        width: 960px;
+        margin: 5% auto;
+    }
+    .login-window, #forgotPasswordTemplate, #createAccountTemplate {
+        top: 15%;
+        position: relative;
+        border: 1px solid #E2E1E1;
+        border-radius: 1px;
+        box-shadow: 0 0px 6px 0 #E2E1E1;
+    }
+    .login-window {
+        width: 50%;
+    }
+    #forgotPasswordTemplate, #createAccountTemplate {
+        width: 35%;
+    }
+    #statusMessageTemplate #leftPanel .statusMessage{
+        width: 100%;
+        padding: 20px;
+        min-height: 420px;
+    }
+    #statusMessageTemplate .leftPanel {
+        min-height: 470px;
+    }
+    #bucketList #userBucketList {
+        width: 97%;
+    }
+    .modal-dialog.modal-md {
+        top: 10%;
+        right: 20%;
+        bottom: 10%;
+        left: 20%;
+    }
+    #bucketTemplate, #bucketEditorSelectionTemplate {
+        width: 960px;
+    }
+    #homeFeedTemplate {
+        margin: 50px auto;
+        width: 960px;
+    }
+    .mobile-menu {
+        display: none !important;
+    }
+    .groupSeparator p:before {
+        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), #000);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+        margin-top: 10px;
+    }
+    .groupSeparator p:after {
+        background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0), #000);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0), #000);
+        margin-bottom: 10px;
+    }
+    .groupSeparator p:before, .groupSeparator p:after {
+        content: "";
+        height: 100px;
+        vertical-align: middle;
+        width: 1px;
+        float: left;
+        margin: 0 4%;
+    }
+    .leak-logo-sm, .leak-logo-lg {
+        display: none;
+    }
+}
+@media (min-width: 991px) and (max-width: 1280px) {
+    #statusMessageContent #statusLikeUnlikeTemplate span.statusMessageLikeCount {
+        padding-top: 10px;
+    }
+    .floating-generic-error {
+        position: fixed;
+        z-index: 999;
+        width: 960px;
+        top: 40px;
+    }
+    .inbox-message-cotainer .inbox-content, .inbox-message-cotainer .inbox-post-message {
+        width: 50%;
+    }
+}
+@media (min-width: 1280px) {
+    .inbox-message-cotainer .inbox-content, .inbox-message-cotainer .inbox-post-message {
+        width: 50%;
+    }
+    .floating-generic-error {
+        position: fixed;
+        z-index: 999;
+        width: 960px;
+        top: 40px;
+    }
+    .login-window {
+        width: 50%;
+    }
+    .leak-logo-sm, .leak-logo-lg {
+        display: none;
+    }
+    #statusMessageContent #statusLikeUnlikeTemplate span.statusMessageLikeCount {
+        padding-top: 10px;
+    }
+    #statusMessageTemplate .leftPanel #options #reportAbuseTemplate, #statusMessageTemplate .leftPanel #options #timestampTemplate {
+        margin-top: 5px;
+    }
+    .nav-header-icons {
+        width: 13% !important;
+    }
+}
+@media (min-width: 500px) and (max-width: 1064px) {
+    .modal-content .modal-body #post #textarea {
+        width: 80%;
+    }
+}
+@media (min-width: 1200px) {
+    .modal-dialog.modal-lg {
+        width: 80%;
+        top: 8%;
+        right: 8%;
+        bottom: 8%;
+        left: 8%;
+    }
+    .nav-header-icons {
+        width: 13% !important;
+    }
+    .modal-content .modal-body #post #textarea {
+        min-height: 350px;
+        font-size: 2.5em;
+    }
+    .login-window {
+        width: 50%;
+    }
+    #loginTemplate, #accountInviteTemplate {
+        width: 40%;
+    }
+    #homeTemplate, #homeFeedTemplate, #footerTemplate, .container-fluid, #userBucketTemplate, #bucketTemplate, #seeAllNotificationTemplate, #settingsTemplate,#readTemplate {
+        margin: 0 auto;
+        width: 960px;
+    }
+    #userBucketTemplate {
+        margin: 5% auto !important;
+    }
+    #seeAllNotificationTemplate, #inboxTemplate, #settingsTemplate,#readTemplate, #welcomeTempalate {
+        margin: 4% auto !important;
+        /*background-color: #fff;*/
+        padding: 10px;
+        width: 960px;
+    }
+    #footerTemplate {
+        left: 11%;
+        right: 11%;
+    }
+    #homeFeedTemplate #pageCont .list-group-item {
+        width: 32%;
+        min-width: 32%;
+        box-shadow: none;
+    }
+    .login-window {
+        top: 5% !important;
+    }
+    .login-window, #forgotPasswordTemplate, #createAccountTemplate {
+        border: 1px solid #ffffff;
+        border-radius: 1px;
+        box-shadow: 0 0px 6px -2px #000000;
+        position: relative;
+        font-size: .7em;
+        line-height: 1.2em;
+        top: 10%;
+        background-color: #f8f8f8;
+    }
+    #forgotPasswordTemplate, #createAccountTemplate {
+        width: 25%;
+    }
+    #statusMessageTemplate #leftPanel .statusMessage{
+        min-height: 420px;
+        min-width: 100%;
+    }
+    #statusMessageTemplate .leftPanel #rightPanel {
+        float: left;
+        min-height: 400px;
+        max-width: 35%;
+        font-size: 1em;
+        padding: 10px;
+        border-radius: 2px;
+        margin-left: 5px;
+    }
+    #statusMessageTemplate .leftPanel #rightPanel .panel-body {
+        padding: 0;
+    }
+    #bucketList #userBucketList {
+        width: 98%;
+        border: none;
+    }
+    .modal-dialog.modal-md {
+        top: 10%;
+        right: 20%;
+        bottom: 10%;
+        left: 20%;
+    }
+    #bucketTemplate {
+        margin: 3% auto;
+    }
+    .mobile-menu {
+        display: none !important;
+    }
+    .groupSeparator p:before {
+        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), #000);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+        margin-top: 10px;
+    }
+    .groupSeparator p:after {
+        background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0), #000);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0), #000);
+        margin-bottom: 10px;
+    }
+    .groupSeparator p:before, .groupSeparator p:after {
+        content: "";
+        height: 100px;
+        position: relative;
+        vertical-align: middle;
+        width: 1px;
+        float: left;
+        margin: 0 4%;
+    }
+    .leak-logo-sm, .leak-logo-lg {
+        display: none;
+    }
+    #savePostButton:before {
+        content: "Save";
+    }
+    #cancelPostButton:before {
+        content: "Cancel";
+    }
+    #savePostButton i, #cancelPostButton i {
+        display: none;
+    }
+    #postLeak i.fa-clock-o, #postLeak i.fa-comments {
+        display: none;
+    }
+    #neverExpire {
+        display: none !important;
+    }
+    .options-bar #eventuallyExpire, .options-bar #neverExpire {
+        margin: 0 !important;
+    }
+    #eventuallyExpire input[type="text"] {
+        float: none !important;
+    }
+}
+
+/* Media Queries end */
+
+
+
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    /* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+    /* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+    /* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+    /* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+    /* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+    /* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+    /* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+    /* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+    @-ms-viewport {
+        width:320px
+    }
+}

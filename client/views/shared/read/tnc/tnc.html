@@ -1,0 +1,63 @@
+
+<template name="_TnC">
+    <div id="tncTemplate">
+        <header>Terms & Condition</header>
+        <div class="description">
+        <p>
+            If you access or use LetsLeak, it means you agree to be bound by all of the terms below. So, before you use LetsLeak, please read all of the terms. If you don’t agree to all of the terms below, please do not use LetsLeak. Also, if a term does not make sense to you, {{>Links key="ContactUs" message="Contact Us" target="_blank"}}.
+        </p>
+            <ul>
+                <li>
+                    <span class="question">Changes to these Terms</span>
+                    <span class="answer">
+                        <p>
+                            LetsLeak reserves the right to update terms over time, such updates will be informed to all users via an appropriate medium.
+                        </p>
+                    </span>
+                </li>
+                <li>
+                    <span class="question">Creating accounts</span>
+                    <span class="answer">
+                        <p>
+                            When you create an account you also agree to maintain the security of your password and accept all risks of unauthorized access to your account.
+
+                        </p>
+                    </span>
+                </li>
+                <li>
+                    <span class="question">Your content & conduct</span>
+                    <span class="answer">
+                        <p>
+                            You agree to follow our {{>Links key="GroundRules" message="Ground Rules"}}. You are solely responsible for what you post. <b>LetsLeak does not take any responsiblity of what the users post.</b> If due to legal issues, the law asks LetsLeak to provide the account details of users posting inappropriate content, LetsLeak will provide the details.
+                        </p>
+                        <p>
+
+                        </p>
+                    </span>
+                </li>
+                <li>
+                    <span class="question">Modifications to the Service</span>
+                    <span class="answer">
+                        <p>
+                            LetsLeak reserves the right in its sole discretion to review, improve, modify or discontinue, temporarily or permanently, the service and/or any features, information, materials or content on the service with or without notice to you. You agree that LetsLeak will not be liable to you or any third party for any modification or discontinuation of the service or any portion thereof.
+                        </p>
+                    </span>
+                </li>
+                <li>
+                    <span class="question">Suspension/Termination</span>
+                    <span class="answer">
+                        <p>
+                            LetsLeak may suspend and/or terminate your rights with respect to LetsLeak for any reason or for no reason at all and with or without notice at LetsLeak’s sole discretion.
+                            If LetsLeak believes a post you have made violates these Terms and Conditions, LetsLeak may make that post invisible to other users without notifying you.
+                        </p>
+                    </span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</template>
+
+<template name="TnC">
+    {{> Read templateName="_TnC"}}
+</template>

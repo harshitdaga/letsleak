@@ -1,0 +1,124 @@
+<template name="AddToBucket" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <div id="addToBucketTemplate">
+        <div class="modal fade" id="addToBucketModal" tabindex="-1" role="dialog" aria-hidden="false">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h3>Add to Bucket</h3>
+
+                        <div>
+                            <!--<span id="refreshing" style="display: none">Refreshing</span>-->
+
+                            <button type="button" class="btn btn-default" id="refreshButton">
+                                <span class="entypo cycle"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="modal-body">
+                        <!-- Errors Starts -->
+                        <div id="addToBucket-generic-error">
+                        </div>
+
+                        <div class="error-text hidden">
+                            <span class="AB_101">Select at least 1 bucket.</span>
+                            <span class="AB_1">Some technical error occurred.</span>
+                            <span class="AB_1002">It seems that the owner of the bucket has modified bucket settings. Please refresh the list of buckets and try again.</span>
+                        </div>
+                        <!-- Errors Ends -->
+
+                        <input id="postId" class="hidden" value="{{this.postId}}"/>
+
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#userBucketList" data-toggle="tab">Created</a></li>
+                            <li><a href="#followingBucketList" data-toggle="tab">Following</a></li>
+                        </ul>
+
+                        <div id="bucketList" class="hide">
+                            {{#if aBucketExist}}
+                            <!-- User created bucket list starts -->
+
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active" id="userBucketList">
+                                    <h4 id="userBucketListMessage">Buckets created by you</h4>
+                                    {{> _ListBucket bucketList=getUserCreateBucketList bucketType='created'}}
+                                </div>
+                                <!-- User created bucket list ends -->
+
+
+                                <!-- User followed bucket list starts -->
+
+
+                                <div class="tab-pane fade" id="followingBucketList">
+                                    <h4 id="userFollowBucketListMessage">Buckets followed by you</h4>
+                                    <h5>(These are buckets that you are following and the owner has allowed others to add content to them.)</h5>
+                                    {{> _ListBucket bucketList=getUserFollowedBucketList bucketType='followed'}}
+                                </div>
+                                <!-- User followed bucket list ends -->
+                            </div>
+                            {{else}}
+                            <div class="bs-callout bs-callout-danger">
+                                <h4>There are no buckets to show!</h4>
+                                <p>
+                                    You have not created any bucket and you are not following any bucket to which the owner has allowed to add content.<br>
+                                    Create a bucket <a href="{{pathFor 'user.bucket'}}">click here</a><br>
+                                    Follow a bucket <a href="{{pathFor 'bucket'}}">click here</a>.
+                                </p>
+                            </div>
+
+                            {{/if}}
+
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="hide" id="noBucketMessage">
+                            <small>Please create or follow a bucket.</small>
+                        </div>
+
+                        <div id="userBucketListWaiting">
+                            {{> Loading }}
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="addButton">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="_ListBucket">
+    {{#each bucketList}}
+    <div class="bucketsCreatedList" id="">
+        <input type="checkbox" name="bucketName" id="{{this._id}}" value="{{this._id}}">
+        <label for="{{this._id}}" class="control-label">{{toCapitalize this.f_bucket.f_name}}</label>
+        {{#if eq this.f_bucket.f_access 'PRIVATE' true}}
+        <span class="entypo lock" id="isPrivate"></span>
+        {{/if}}
+
+        <div class="">
+            {{this.f_bucket.f_desc}}
+        </div>
+
+    </div>
+    {{else}}
+    <div class="bs-callout bs-callout-danger">
+        <h4>There are no buckets to show!</h4>
+
+        <p>
+            {{#if eq bucketType 'created' true}}
+                You have not created any bucket.<br>
+                Create a bucket <a href="{{pathFor 'user.bucket'}}">click here</a><br>
+            {{else}}
+                You are not following any bucket to which the owner has allowed to add content.<br>
+                Follow a bucket <a href="{{pathFor 'bucket'}}">click here</a>.
+            {{/if}}
+        </p>
+    </div>
+    {{/each}}
+</template>

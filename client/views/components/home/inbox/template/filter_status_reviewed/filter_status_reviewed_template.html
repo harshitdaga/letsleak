@@ -1,0 +1,63 @@
+<template name="_FilterStatusReviewed">
+    <div class="inbox-message-cotainer">
+        <div class="modal-body">
+            <div class="bs-callout bs-callout-info">
+                <h4 class="modal-title" id="inbox-subject">Your post review</h4>
+            </div>
+            <div class="inbox-content">
+                <p>It came to our attention that one of your posts did not follow LetsLeak {{>Links key="GroundRules"
+                    message="Ground Rules" target="_blank"}} and was not upto the LetsLeak community standards.
+                </p>
+                <p>
+                    This is to update and inform you that the post has been marked as
+                    {{#if eq this.f_paramObj.f_action "VALID"}}
+                        <b>APPROPRIATE</b>
+                    {{else}}
+                        <b>NOT APPROPRIATE</b> beacuse {{ toLowerCase this.f_paramObj.f_filter_reason}}
+                    {{/if}}
+                </p>
+            </div>
+            <div class="inbox-post-message">
+                <div class="message">
+                    <ul>
+                        <li class="list-group-item">
+                            <div class="thumbnail {{this.f_paramObj.f_color}}">
+                                <div class="thumbnailContainer">
+                                    <h4>{{this.f_paramObj.f_message}}</h4>
+
+                                    <div class="homeFeedFooter">
+                                        {{#if eq this.f_paramObj.f_action "VALID"}}
+                                        <a class="btn pull-right" role="button"
+                                           href="{{pathFor 'status.message' _id=this.f_postId}}" id="showMessageButton"
+                                           value="{{this._id}}" target="_blank">
+                                            <span class="entypo level-down"></span>
+                                        </a>
+                                        {{/if}}
+
+                                        <div id="timestamp" class="pull-right">
+                                            <!--{{> Timestamp timestamp=this.f_paramObj.f_timestamp}}-->
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="homeFeedFooter-bg"></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="modal-footer">
+            <span class="pull-left"><h5>
+                <small>This is an auto-generated message. If you have any concerns please visit {{>Links
+                    key="GroundRules"
+                    message="Ground Rules" target="_blank"}} or {{>Links key="ContactUs" message="Contact Us"
+                    target="_blank"}}.
+                </small>
+            </h5></span>
+            <button type="button" class="btn btn-primary pull-right" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</template>
+

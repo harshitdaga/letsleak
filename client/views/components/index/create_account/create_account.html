@@ -1,0 +1,121 @@
+<template name="CreateAccount">
+    <div class="landing-logo-hold fpassword">
+        <a href="/"> <div class="leak-logo-md"></div></a>
+    </div>
+    <div class="clearfix"></div>
+
+    <div id="createAccountTemplate">
+        <a href="/"> <div class="leak-logo-sm">
+            <span></span>
+            <span></span>
+        </div></a>
+
+        <h3>Create Account</h3>
+        {{#if isValid}}
+        <!-- Errors Starts -->
+        <div id="createAccount-generic-error">
+        </div>
+
+        <div class="error-text hidden">
+            <span class="CA_101 CA_1001 CA_1002 CA_1003">You can't leave this empty.</span>
+            <span class="CA_102">Use at least 3 and maximum 15 characters..</span>
+            <span class="CA_103">You can only use letters, numbers and underscore symbol.</span>
+            <span class="CA_104">Your password should contain at least one letter and one number.</span>
+            <span class="CA_105">Use at least 8 characters.</span>
+            <span class="CA_106">Passwords don't match. Try again!</span>
+            <span class="CA_107">Use at least 5 characters.</span>
+            <span class="CA_108 105">Username already taken.</span>
+            <span class="CA_1004">Sorry, but it seems the invitation code is invalid or already used.</span>
+        </div>
+        <!-- Errors Ends -->
+
+        <form class="form-horizontal" role="form" id="createAccountForm">
+
+            <!-- Account name starts -->
+            <div class="form-group" id="accountNameGroup">
+                <!--<label class="control-label" for="accountName">Choose Your user name</label>-->
+                    <input type="text" title="Username" class="form-control" id="accountName" placeholder="Username" maxlength="15" autofocus>
+                    <span class="error-text"></span>
+                    <span class="help-text hide">
+                          Use at least 3 and maximum 15 characters. You can only use letters, numbers and underscore symbol.
+                    </span>
+            </div>
+            <!-- Account name end -->
+
+            <!-- Password starts -->
+            <div class="form-group" id="passwordGroup">
+                <!--<label class="control-label" for="password">Create a password</label>-->
+
+                <div>
+                    <input type="password" title="Password" class="form-control" id="password" placeholder="Password">
+                    <span class="error-text"></span>
+                    <span class="help-text hide">
+                          Use at least 8 characters. Your password should contain at least one letter and one number.
+                      </span>
+                </div>
+            </div>
+            <!-- Password ends -->
+
+            <!-- Confirm Password starts -->
+            <div class="form-group" id="confirmPasswordGroup">
+                <!--<label class=" control-label" for="confirmPassword">Confirm your password</label>-->
+
+                <div>
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password">
+                    <span class="error-text"></span>
+                </div>
+            </div>
+            <!-- Confirm Password ends -->
+
+            <!-- Security Pin starts -->
+            <div class="form-group" id="securityPinGroup">
+                <!--<label class="control-label" for="securityPin">Create your Security Pin</label>-->
+
+                <div class="modal fade" id="securityPinModal" tabindex="-1" role="dialog"
+                     aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close pull-right" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Usage of security pin</h4>
+                            </div>
+                            <div class="modal-body">
+                                The security pin is used in case you forget your password.
+                                You can always change the security pin after creating the account.<br>
+                                LetsLeak requests to make sure you keep it safe and do not share with anyone.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="password" title="Security pin" class="form-control pull-left" id="securityPin" placeholder="Security pin">
+                    <i class="fa fa-info pull-right" id="securityInfo" data-toggle="modal" data-target="#securityPinModal"></i>
+                    <span class="error-text"></span>
+                    <span class="help-text hide">
+                          Use at least 5 characters.
+                      </span>
+                </div>
+            </div>
+            <!-- Security Pin ends -->
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-default btn-brand pull-right" id="createAccountButton">Create account
+                </button>
+            </div>
+        </form>
+        {{else}}
+        {{#if isValidCode}}
+            <div class="alert-info">
+                <span>Oops! Account already registered with this email-id.</span>
+            </div>
+        {{else}}
+            <div class="alert-info">
+                <span>Oops! Invalid invitation code.</span>
+            </div>
+        {{/if}}
+        {{/if}}
+    </div>
+</template>

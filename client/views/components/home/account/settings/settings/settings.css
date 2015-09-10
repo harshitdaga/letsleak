@@ -1,0 +1,32 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+/*****************************************************************************/
+/* Setting: Style */
+/*****************************************************************************/
+
+#settingsTemplate {
+    padding: 20px 0;
+}
+
+#settingsTemplate #options-panel {
+    width: 23%;
+    border-right: 1px solid #ccc;
+    min-height: 400px;
+}
+
+#settingsTemplate #settings-container-panel {
+    width: 75%;
+    padding: 0 1%;
+}
+#options-panel .nav > li > a {
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+#passwordSettingsTemplate .form-horizontal .form-group, #securitySettingsTemplate .form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0;
+}

@@ -1,0 +1,16 @@
+<template name="Settings">
+    <div id="settingsTemplate">
+        <div id="options-panel" class="pull-left">
+            <ul class="nav nav-pills nav-stacked">
+                <li id="password-li" class="active"><a href="#" id="passwordOption">Password</a></li>
+                <li id="security-li"><a href="#" id="securityOption">Security</a></li>
+                <li id="activeSession-li"><a href="#" id="activeSessionOption">Sessions</a></li>
+            </ul>
+
+        </div>
+        <div id="settings-container-panel" class="pull-left">
+            {{> UI.dynamic template=templateName}}
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</template>

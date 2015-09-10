@@ -1,0 +1,148 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+#bucketInsightTemplate .logo #dropDownLogoMenu{
+    position: absolute;
+    z-index: 1000;
+    background: #555555;
+    border: 1px solid #222222;
+    border-radius: 2px;
+    margin-top: 80px;
+    padding: 5px;
+    color: #ffffff;
+}
+#bucketInsightTemplate .logo #dropDownLogoMenu ul, #bucketInsightTemplate .logo #dropDownLogoMenu ul li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#bucketInsightTemplate .logo #dropDownLogoMenu ul li {
+    padding: 5px;
+    border-bottom: 1px solid #dbdbdb;
+    cursor: pointer;
+}
+#bucketInsightTemplate .logo #dropDownLogoMenu ul li:last-child {
+    border: none;
+}
+.container#bucketInsightTemplate {
+    width: auto !important;
+    padding: 0 !important;
+}
+.bb-custom-firstpage .bucketEditorFooter {
+    margin-top: 2% !important;
+    margin-right: 2% !important;
+    margin-left: 2% !important;
+    width: 48% !important;
+    top: 0;
+    font-size: .7em;
+}
+.bb-custom-side {
+    webkit-align-items: baseline !important;
+    align-items: baseline !important;
+}
+.bb-item .bb-custom-side:first-child {
+    /*webkit-align-items: center !important;*/
+    /*align-items: center !important;*/
+}
+.bb-custom-firstpage, .bb-custom-side {
+    border-right: 1px solid #dbdbdb;
+}
+.bb-custom-side, .bb-custom-side p  {
+    text-align: center;
+}
+.bb-custom-side p {
+    font-size: 1.5em;
+    line-height: 1.1em;
+}
+.bb-nav .fa {
+    font-size: 20px;
+    margin-top: 3px;
+}
+.bb-custom-wrapper > nav a.bb-nav {
+    background: #333333 !important;
+    color: #ffffff;
+}
+.bb-custom-wrapper > nav a.bb-nav:hover {
+    color: #ffffff !important;
+}
+.bb-custom-wrapper > nav {
+    background: rgba(236, 236, 236, 0.7);
+    padding: 5px 0;
+    height: auto !important;
+    bottom: 0 !important;
+}
+.leak-logo-sm.bucket-insight-logo span:first-child {
+    float: right;
+    position: static;
+    width: 50px;
+    height: 35px;
+    opacity: 1;
+}
+.leak-logo-sm.bucket-insight-logo {
+    display: inline-block !important;
+}
+a.leak-logo-sm.bucket-insight-logo {
+    background: none;
+    display: inline-block;
+    opacity: 1;
+    float: left;
+    margin: -3px 0 0 20px;
+}
+a.leak-logo-sm.bucket-insight-logo:hover {
+    opacity: 1;
+}
+.bucket-insight-footer .btn .entypo.bucket {
+    margin-left: -8px !important;
+}
+.bucket-insight-footer .btn .entypo.plus {
+    margin-left: -1px !important;
+}
+.bucket-insight-footer {
+    width: 90%;
+    margin-top: 3%;
+}
+.bucket-insight-footer #timestampTemplate, .bucketEditorFooter #timestampTemplate {
+    font-size: .7em;
+}
+.bucket-insight-footer .btn {
+    background-color: transparent !important;
+}
+.bucket-insight-footer .btn.icon a, .bucket-insight-footer .btn.icon a:active, .bucket-insight-footer .btn {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+.bucket-insight-footer .btn.icon a:hover {
+    text-decoration: none !important;
+}
+.bucket-insight-footer .btn.icon a:hover, .bucket-insight-footer .btn:hover {
+    color: #333333 !important;
+    border: 1px solid #333333;
+    text-decoration: none !important;
+}
+.bb-custom-firstpage p {
+    font-size: 2.3em;
+    line-height: 1.1em;
+    word-wrap: break-word;
+    white-space: normal;
+}
+.bb-custom-side .fontClass-white p, .bb-custom-side .fontClass-black p {
+    color: #ffffff !important;
+    word-wrap: break-word;
+    white-space: normal;
+}
+.b-insight-l-page-txt {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #888888;
+    background-color: #ccc;
+    height: 100%;
+    text-shadow: 0px 1px 1px #fff;
+}
+.b-insight-l-page-txt p {
+    top: 30%;
+    position: relative;
+}

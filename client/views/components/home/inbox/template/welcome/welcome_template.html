@@ -1,0 +1,33 @@
+<template name="_Welcome">
+    <div class="inbox-message-cotainer">
+        <div class="modal-body">
+            <div class="bs-callout bs-callout-info">
+                <h4 class="modal-title" id="inbox-subject">Welcome</h4>
+            </div>
+            <div class="inbox-content width100">
+                <p>how-<span style="color:#198ad1;">d'ye-do!</span></p>
+                <p>
+                    We welcome you to LetsLeak and hope that you will have a great time here!
+                </p>
+                <p>
+                   We strongly recommend you to visit our  {{>Links key="GroundRules" message="Ground Rules" target="_blank"}} and {{>Links key="FAQ" message="FAQs" target="_blank"}} to be a responsible member of our community.
+                   Also please go through our <a href="#" id="productTour">product tour</a>.
+                </p>
+                <p>
+                    Cheers!<br>
+                    Team LetsLeak
+                </p>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="modal-footer">
+            <span class="pull-left"><h5>
+                <small>This is an auto-generated message. If you have any concerns please visit {{>Links key="ContactUs" message="Contact Us" target="_blank"}}.
+                </small>
+            </h5></span>
+
+            <button type="button" class="btn btn-primary pull-right" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</template>
+

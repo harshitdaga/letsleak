@@ -1,0 +1,65 @@
+<template name="BucketEditorSelection">
+    <div id="bucketEditorSelectionTemplate">
+        <!-- Errors Starts -->
+        <div id="bucketEditorSelection-generic-error" class="floating-generic-error">
+        </div>
+
+        <div class="error-text hidden">
+            <!-- Generic -->
+            <span class="BES_101"></span>
+            <!-- Follow -->
+            <span class="BF_101 BUF_101">Some technical error occurred.</span>
+        </div>
+        <!-- Errors Ends -->
+
+        {{#each bucketList}}
+        <div class="col-sm-6 col-md-4" id="{{this._id}}">
+            <div class="thumbnail">
+                <div class="caption">
+                    <div id="control">
+                        <!--follow/unfollow-->
+                        {{#if eq isUserBucket this.f_userId false}}
+                        <button type="submit" class="btn btn-primary {{isFollowed this._id 'followButton'}}"
+                                id="followButton" bucket="{{this._id}}">Follow
+                        </button>
+                        <button type="submit" class="btn btn-primary {{isFollowed this._id 'unFollowButton'}}"
+                                id="unFollowButton" bucket="{{this._id}}">UnFollow
+                        </button>
+                        {{/if}}
+                    </div>
+                    <h3>{{toCapitalize this.f_bucket.f_name}}</h3>
+
+                    <p>{{toLowerCase this.f_bucket.f_desc}}</p>
+                </div>
+                <div class="clearfix"></div>
+                <div class="bucketEditorFooter">
+                    <span><i class="entypo users" data-toggle="tooltip" data-placement="top"
+                                      title="Followers of this bucket."></i> {{this.f_followCount}}</span>
+                    <span><i class="entypo paper-plane" data-toggle="tooltip" data-placement="top"
+                                      title="Number of post in this bucket."></i> {{postCount this._id}}</span>
+                    {{#if isUserBucket this.f_userId}}
+                    <span><i class="entypo user" data-toggle="tooltip" data-placement="top"
+                             title="You are the owner of this bucket."></i></span>
+                    {{/if}}
+                    {{#unless this.f_bucket.f_isEditable}}
+                    <span><i class="entypo lock" data-toggle="tooltip" data-placement="top"
+                             title="Only owner can add content to this bucket."></i></span>
+                    {{/unless}}
+
+                    <span class="bucket-insightLink pull-right"><a target="_blank" href="{{pathFor 'bucket.insight'}}">
+                        <span class="entypo level-down"></span>
+                    </a></span>
+                    <span id="timestamp" class="pull-right">
+                        <!--{{> Timestamp timestamp=this.f_timestamp}}-->
+                    </span>
+                </div>
+                <div class="bucketFooter-bg"></div>
+            </div>
+        </div>
+        {{#if isUserBucket this.f_userId}}
+            {{attachToolTip}}
+        {{/if}}
+        {{/each}}
+        <div class="clearfix"></div>
+    </div>
+</template>

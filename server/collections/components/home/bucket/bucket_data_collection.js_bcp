@@ -1,0 +1,69 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+var BucketData = new Meteor.Collection('c_bucket_data');
+
+/*****************************************************************************/
+/* BucketData Collection : Query Methods */
+/*****************************************************************************/
+
+BucketData.removeData = function(bucketDataRequest) {
+	var result = BucketData.update(
+		{_id : bucketDataRequest.bucket_id },
+		{ $pull : {item_id_list : bucketDataRequest.item_id}});
+	return result;
+};
+
+
+BucketData.getItemCursor = function(bucketDataRequest, userId){
+	var result = BucketData.find(
+		{
+			"_id" : bucketDataRequest.bucket_id
+		},
+		{
+			sort : { "item_id_list.timeStamp" : 1},
+			limit : 5
+		}
+	);
+
+	return result;
+};
+
+
+/*****************************************************************************/
+/* BucketData Collection : Permissions */
+/*****************************************************************************/
+BucketData.allow({
+  insert: function (userId, doc) {
+    return false;
+  },
+
+  update: function (userId, doc, fieldNames, modifier) {
+    return false;
+  },
+
+  remove: function (userId, doc) {
+    return false;
+  }
+});
+
+BucketData.deny({
+  insert: function (userId, doc) {
+    return false;
+  },
+
+  update: function (userId, doc, fieldNames, modifier) {
+    return false;
+  },
+
+  remove: function (userId, doc) {
+    return false;
+  }
+});
+
+_.extend(LeakCollection,{
+	BucketData : BucketData
+});

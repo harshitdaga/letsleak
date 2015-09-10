@@ -1,0 +1,19 @@
+<template name="StatusLikeUnlike">
+  <span id="statusLikeUnlikeTemplate">
+      <span id="{{this.postId}}">
+          <span class="statusMessageLikeCount">{{getLikeCount this.postId}}</span>
+          <span>
+              <button class="btn btn  {{isLiked this.postId 'like'}}" id="like" name="like">
+                  <i class="entypo heart-empty"></i>
+              </button>
+              <button class="btn btn  {{isLiked this.postId 'unlike'}}" id="unlike" name="unlike">
+                  <i class="entypo heart"></i>
+              </button>
+          </span>
+          <div class="clearfix"></div>
+      </span>
+  </span>
+
+    {{init this.parentTemplate this.errorPrefix}}
+    <!--{{lastUpdated}}-->
+</template>

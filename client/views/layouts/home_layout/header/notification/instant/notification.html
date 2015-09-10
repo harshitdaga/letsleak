@@ -1,0 +1,206 @@
+<template name="Notification">
+    <div id="notificationTemplate">
+        <div class="dropdown" id="instantNotificationDropDown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <!--<i data-hover="fa-home" class="fa fa-bell"></i>-->
+                <!--<i data-hover="fa-home" class="entypo bell"></i>-->
+                <span class="header-icons icon-bell"></span>
+                {{#if notificationExist}}
+                    <div id="unreadCount">{{unreadCount}}</div>
+                {{/if}}
+            </a>
+
+            <div class="dropdown-menu" role="menu" aria-labelledby="dLabel" >
+                <div role="presentation" class="dropdown-header pull-left">
+                    <span class="pull-left">Notification Center</span>
+                    {{#if notificationExist}}
+                        <button type="button" class="btn btn-secondary pull-right" id="markAllAsRead">Mark All as Read</button>
+                    {{/if}}
+                </div>
+
+
+                <!-- Errors Starts -->
+                <div id="notification-generic-error">
+                </div>
+
+                <div class="error-text hidden">
+                </div>
+                <!-- Errors Ends -->
+
+                <div>
+                    {{#if notificationExist}}
+                    <ul>
+                        {{#each unreadNotification}}
+                        <li class="notification" role="presentation" id="{{this._id}}">
+                            {{#if eq this.f_type.f_name 'POST_LIKE' true}}
+                            {{> _PostLikeNotification notification=this}}
+                            {{/if}}
+
+                            {{#if eq this.f_type.f_name 'POST_COMMENT' true}}
+                            {{> _PostCommentNotification notification=this}}
+                            {{/if}}
+
+                            {{#if eq this.f_type.f_name 'REPORT_ABUSE' true}}
+                            {{> _ReportAbuseNotification notification=this}}
+                            {{/if}}
+
+                            {{#if eq this.f_type.f_name 'POST_ADDED_TO_BUCKET' true}}
+                            {{> _BucketPostAddedNotification notification=this}}
+                            {{/if}}
+
+                            {{#if eq this.f_type.f_name 'BUCKET_FOLLOWED' true}}
+                                {{> _BucketFollowedNotification notification=this}}
+                            {{/if}}
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{else}}
+                    <div class="noNotification">
+                        <!--<button class="btn btn-link" id="seeAllButton">See Archived</button>-->
+                        <div class="bs-callout bs-callout-warning">
+                            No notification(s) to show.
+                        </div>
+                    </div>
+                    {{/if}}
+                </div>
+
+
+                <div class="footer">
+                    <button class="btn btn-link" id="seeAllButton">See Archived</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</template>
+
+<template name="_PostLikeNotification">
+    <div  class="list-group-item">
+        <div class="notificationMessage">
+            <!--, total {{this.f_message.f_post_like_count}} likes.-->
+            <div class="notiMessage">
+                <span id="message" value="{{notification.f_message.f_postId}}" action="STATUS" notificaitonId="{{notification._id}}">
+                    <a href="{{pathFor 'status.message' _id=notification.f_message.f_postId}}" class="fa fa-quote-left"></a>
+                    <span>{{notification.f_message.f_post_message}}</span>
+                </span>
+            </div>
+            <div class="notiActionDesc">
+                <span id="action" class="entypo heart"></span>
+                {{> _NotificationDescUtil notification}}
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="_PostCommentNotification">
+    <div class="list-group-item">
+        <div class="notificationMessage">
+            <div class="notiMessage">
+                <span id="message" value="{{notification.f_message.f_postId}}" action="STATUS" notificaitonId="{{notification._id}}">
+                     <a href="{{pathFor 'status.message' _id=notification.f_message.f_postId}}" class="fa fa-quote-left"></a>
+                    <span>{{notification.f_message.f_post_message}}</span>
+                </span>
+            </div>
+            <div class="notiActionDesc">
+                <span id="action"><i class="fa fa-comment"></i></span>
+                {{> _NotificationDescUtil notification}}
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<template name="_ReportAbuseNotification">
+    <div class="list-group-item">
+        <div class="notificationMessage">
+            <div class="notiMessage">
+                <span id="message" value="{{notification.f_message.f_postId}}" action="STATUS" notificaitonId="{{notification._id}}">
+                    <a href="{{pathFor 'status.message' _id=notification.f_message.f_postId}}" class="fa fa-quote-left"></a>
+                    <span><b>{{reportAbuseReason notification.f_message.f_reason_code}}</b> # {{notification.f_message.f_post_message}}</span>
+                </span>
+            </div>
+            <div class="notiActionDesc">
+                <span id="action" class="entypo bucket"></span>
+                <!--<span id="action-desc">
+                    <b>{{reportAbuseReason notification.f_message.f_reason_code}}</b>
+                </span>-->
+                {{> _NotificationDescUtil notification}}
+            </div>
+            <!--<div class="clearfix"></div>
+            {{> _NotificationDescUtil notification}}-->
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</template>
+
+
+<template name="_BucketPostAddedNotification">
+    <div class="list-group-item">
+        <div class="notificationMessage">
+            <div class="notiMessage">
+                <span id="message">
+                <a href="{{pathFor 'status.message' _id=notification.f_message.f_postId}}" class="entypo bucket" style="margin-top: 6px; margin-right:5px"></a>
+                    <span value="{{notification.f_message.f_bucket_id}}" action="BUCKET" notificaitonId="{{notification._id}}">
+                        A post was added to the bucket  <b>{{notification.f_message.f_bucket_name}}</b>
+                    </span>
+                    <span value="{{notification.f_message.f_postId}}" action="STATUS" notificaitonId="{{notification._id}}">
+                        {{notification.f_message.f_post_message}}</span>
+                </span>
+            </div>
+            <div class="notiActionDesc">
+                <span id="action">
+                    <a href="{{pathFor 'bucket.insight' _id=notification.f_message.f_bucket_id}}" class="fa fa-quote-left" style="margin-right: 1px"></a>
+                </span>
+                {{> _NotificationDescUtil notification}}
+                <!--<span id="action-desc">
+                    {{notification.f_message.f_bucket_name}}
+                </span>-->
+            </div>
+            <!--<div class="clearfix"></div>
+            {{> _NotificationDescUtil notification}}-->
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</template>
+
+
+
+<template name="_BucketFollowedNotification">
+    <div class="list-group-item">
+        <div class="notificationMessage">
+            <div class="notiMessage">
+                <span id="message" value="{{notification.f_message.f_bucket_id}}" action="BUCKET" notificaitonId="{{notification._id}}">
+                    <span>
+                        Someone started following the bucket <b>{{notification.f_message.f_bucket_name}}</b></span>
+                </span>
+            </div>
+            <div class="notiActionDesc">
+                <span id="action">
+                    <a href="{{pathFor 'bucket.insight' _id=notification.f_message.f_bucket_id}}" class="entypo bucket"></a>
+                </span>
+                {{> _NotificationDescUtil notification}}
+                <!--<span id="action-desc">
+                    {{notification.f_message.f_bucket_name}}
+                </span>-->
+            </div>
+            <!--<div class="clearfix"></div>
+            {{> _NotificationDescUtil notification}}-->
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</template>
+
+
+<template name="_NotificationDescUtil">
+    <span class="pull-right" id="timestamp">
+        {{> Timestamp timestamp=this.f_timestamp}}
+    </span>
+
+    {{#unless this.f_archived}}
+    <!--<a href="#" id="markAsRead" value="{{this._id}}" class="fa fa-check"></a>-->
+    <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-link-sm" id="markAsRead" value="{{this._id}}">Read</button>
+    </div>
+    {{/unless}}
+</template>

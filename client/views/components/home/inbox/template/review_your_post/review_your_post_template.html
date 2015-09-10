@@ -1,0 +1,59 @@
+<template name="_ReviewYourPostTemplate">
+    <div class="inbox-message-cotainer">
+        <!--<div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title" id="subject">Attention, please review your post</h4>
+        </div>-->
+        <div class="modal-body">
+            <div class="bs-callout bs-callout-info">
+                <h4 class="modal-title" id="inbox-subject">Attention, please review your post</h4>
+            </div>
+            <div class="inbox-content">
+                <p>It seems that a particular post by you does not follow LetsLeak {{>Links key="GroundRules"
+                    message="Ground Rules" target="_blank"}} and is not upto the LetsLeak community standards. Please
+                    ensure that what you post does not harm anyone in any way.</p>
+
+                <p>We request you to revisit and review the following post as {{this.f_paramObj.raCount}} users have
+                    reported abuse.</p>
+            </div>
+            <div class="inbox-post-message">
+                <div class="message">
+                    <ul>
+                        <li class="list-group-item">
+                            <div class="thumbnail {{this.f_paramObj.color}}">
+                                <div class="thumbnailContainer">
+                                    <h4>{{this.f_paramObj.postMessage}}</h4>
+
+                                    <div class="homeFeedFooter">
+                                        <a class="btn pull-right" role="button" href="{{pathFor 'status.message' _id=this.f_postId}}" id="showMessageButton" value="{{this._id}}" target="_blank" >
+                                            <span class="entypo level-down"></span>
+                                        </a>
+                                        <div id="timestamp" class="pull-right">
+                                            <!--{{> Timestamp timestamp=this.f_timestamp}}-->
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="homeFeedFooter-bg"></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="modal-footer">
+            <span class="pull-left"><h5>
+                <small>This is an auto-generated message. In case you feel your post is upto the standards please ignore
+                    this, as once it enters into our review center we will manually check the reports and will update
+                    you about our decision. If you have any concerns please visit {{>Links key="ContactUs"
+                    message="Contact Us" target="_blank"}}.
+                </small>
+            </h5></span>
+
+            <button type="button" class="btn btn-primary pull-right" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</template>

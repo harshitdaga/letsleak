@@ -1,0 +1,61 @@
+<template name="ReportAbuse">
+    <span id="reportAbuseTemplate">
+        <div class="{{reportedAbuse this.postId 'undo'}}" id="reportedAlready">
+            <span>Reported Abused By You</span>
+            <button type="button" class="btn btn-link" value="{{this.postId}}" postType="{{this.postType}}"
+                    id="undoReportButton">Undo
+            </button>
+        </div>
+
+        <span class="{{reportedAbuse this.postId 'report'}}" id="report">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#reportAbuseBox"
+                    id="reportAbuse" name="reportAbuse">Report Abuse
+            </button>
+
+            <!-- Modal Start-->
+            <div class="modal fade" id="reportAbuseBox" tabindex="-1" role="dialog"
+                 aria-labelledby="reportAbuseBoxLable" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Report Abuse</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <!-- Errors Starts -->
+                            <div id="reportAbuse-generic-error">
+                            </div>
+
+                            <div class="error-text hidden">
+                                <span class="RA_102">Please select the reason for Report Abuse.</span>
+                            </div>
+                            <!-- Errors Ends -->
+                                <div>
+                                    <div>
+                                        {{#each reportOptions this.postType}}
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="abuseOption" id="{{this.code}}"
+                                                       value="{{this.code}}">
+                                                {{this.message}}
+                                            </label>
+                                        </div>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div class="modal-footer">
+                            <button class="btn btn-primary pull-right" id="reportButton" value="{{this.postId}}"
+                                    postType="{{this.postType}}">Report
+                            </button>
+                            <button class="btn btn-secondary pull-right marginR20" data-dismiss="modal" id="cancelButton">Cancel</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </span>
+    </span>
+
+</template>

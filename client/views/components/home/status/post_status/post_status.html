@@ -1,0 +1,91 @@
+<template name="PostStatus" xmlns="http://www.w3.org/1999/html">
+    <div id="postStatusTemplate">
+        <button class="btn btn-default postStatusBtn" data-toggle="modal" data-target="#statusBox" id="statusButton" name="statusButton">
+            Got something to say? <i class="fa fa-pencil"></i>
+        </button>
+
+        <!-- Modal Start-->
+
+        <div class="modal fade" id="statusBox" tabindex="-1" role="dialog" aria-labelledby="statusModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" color="" id="postContent">
+                    <div class="modal-body" id="postLeak">
+                        <!-- Errors Starts -->
+                        <div id="postStatus-generic-error" class="postStatus-generic-error">
+                        </div>
+
+                        <div class="error-text hidden">
+                            <span class="PS_101">You can't leave this empty.</span>
+                            <span class="PS_102">Post should be at least 10 characters and maximum of 300 character.</span>
+                            <!--<span class="PS_103">Atleast one <b>category</b> should be selected.</span>-->
+                            <span class="PS_104">Expiry time for a message cannot be '0'.</span>
+                            <span class="PS_1006">Your post has been successfully recieved. However it is under review. We will update you once this is done</span>
+                        </div>
+                        <!-- Errors Ends -->
+
+                        <div id="content">
+                            <!-- Status Input Starts -->
+                            <div id="post">
+
+                                <div class="options-bar pull-left">
+
+                                    <button class="btn-secondary pull-right" data-dismiss="modal" id="cancelPostButton"><i class="fa fa-trash-o"></i></button>
+                                    <button class="btn-primary pull-right" id="savePostButton"><i class="fa fa-floppy-o"></i></button>
+
+                                    <!-- Comments Option Start-->
+                                    <div id="commentAllowed">
+                                        <!--<i class="fa fa-comments"></i>-->
+                                        <div class="clearfix"></div>
+                                        <button type="button" class="btn fa fa-check" id="yes"></button>
+                                        <button type="button" class="btn fa fa-times inactive" id="no"></button>
+                                        <label for="commentAllowed">Comments Allowed?</label>
+                                    </div>
+                                    <!-- Comments Option End-->
+
+                                    <!-- Expiry Time Start -->
+                                    <div id="expiryTime">
+                                        <!--<i class="fa fa-clock-o"></i>-->
+                                        <div class="clearfix"></div>
+                                        <button type="button" class="btn fa fa-check inactive" id="expiryTimeYes" value="yes"></button>
+                                        <button type="button" class="btn fa fa-times" id="expiryTimeNo" value="no"></button>
+
+                                        <!--<div id="neverExpire" class="pull-right">
+                                            <span id="expiryValue">Never expire</span>
+                                        </div>-->
+                                <span id="eventuallyExpire" class="hide">
+                                    <!--<label for="expireHour">hour's</label>-->
+                                    <input id="expireHour" type="text" maxlength="2" placeholder="HH">
+                                    <span>:</span>
+                                    <!--<label for="expireMin">min's</label>-->
+                                    <input id="expireMin" type="text" maxlength="2" placeholder="MM">
+                                </span>
+                                        <label for="expiryTime">Expiry Time</label>
+                                    </div>
+                                    <!-- Expiry Time End -->
+                                </div>
+
+                                <div class="clearfix"></div>
+
+                                <!-- Bg Colors Selection Start -->
+                                <div class="color-tools-cont pull-left">
+                                    <div class="color-tools" id="bgColor">
+                                        {{#each color}}
+                                        <button class="bgColorButton color-tool-btn {{this}}" id="{{this}}"></button>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                                <!-- Bg Colors Selection Ends -->
+                                <textarea id="textarea" placeholder="Get typing, the world is waiting ..." class="pull-right"></textarea>
+                            </div>
+                            <!-- Status Input Ends -->
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- Modal Ends-->
+    </div>
+
+</template>

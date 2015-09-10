@@ -1,0 +1,54 @@
+<!--
+    How update_bucket_meta is working.
+    It is using AddUpdateBucket as template,
+    Template is rendered inside update_bucket_meta modal and
+    add button is hidden and modals update/cancel buttons are used.
+
+    Javascript part :
+    1. On click of update icon on user_bucket_list this templates
+       showUpdateModal is called which initials fetch the data from
+       the bucket on which click was made and store the data in local variable.
+
+    2. Modal is registered with on show and on hide events.
+     - On show event :
+        1. fill the add_update_bucket template with data of the bucket clicked.
+        2. set the fields of add_update_bucket template to be used for update_bucket_meta
+
+     - On hide event :
+        1. clears the fields of add_update_bucket template that was set as part of show.
+        2. empties the local variable containing information about the bucket which was clicked.
+-->
+
+<template name="UpdateBucketMeta">
+    <div id="updateBucketMetaTemplate">
+        <!-- Errors Starts -->
+        <div class="error-text hidden">
+            <span class="UB_101">No changes!</span>
+            <span class="B_1004">Your bucket was successfully updated, however is currently under manual review. We will update you once our manual is done.</span>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editBucket"
+             aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Edit Bucket</h4>
+                    </div>
+                    <div class="modal-body" id="editBody">
+                        <!--<div id="updateBucket-generic-error">
+                        </div>-->
+                        <!-- Errors Ends -->
+                        {{> AddUpdateBucket templateType='update'}}
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="saveAction">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

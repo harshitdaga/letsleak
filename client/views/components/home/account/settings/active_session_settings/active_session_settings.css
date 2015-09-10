@@ -1,0 +1,36 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+/*****************************************************************************/
+/* ActiveSessionSettings: Style */
+/*****************************************************************************/
+
+#activeSessionSettingsTemplate {
+
+}
+
+#activeSessionSettingsTemplate #sessionList {
+    position: absolute;
+    margin-top: 30px;
+    width: 20%;
+}
+
+#activeSessionSettingsTemplate .sessionItem {
+    padding: 10px;
+}
+
+#activeSessionSettingsTemplate .sessionItem:hover {
+    background: rgba(128, 128, 128, 0.07);
+}
+
+#activeSessionSettingsTemplate .closeSession {
+    margin-top: 9px;
+    cursor: pointer;
+}
+
+#activeSessionSettingsTemplate .sessionItemTemplate {
+    display: none;
+}

@@ -1,0 +1,35 @@
+<template name="ActiveSessionSettings">
+    <div id="activeSessionSettingsTemplate">
+        <span>
+            <h4>Logged-in Sessions</h4> <hr>
+        </span>
+
+        <div class="hide" id="sessionData">
+            <h6>
+                    This feature provides the information about any concurrent activity on this account.
+            </h6>
+            <br>
+
+            <div class="pull-right">
+                <button type="submit" class="btn btn-default" id="logoutAllAction">Logout all other session(s)</button>
+            </div>
+
+            <div id="sessionList">
+                <div class="sessionItemTemplate sessionItem">
+                      <span><h5>
+                      </h5></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hide" id="noSessionData">
+            <h6>This account does not seem to be open in any other location.</h6>
+            <br>
+        </div>
+        <div id="wait">
+            {{> Loading }}
+        </div>
+
+
+    </div>
+</template>

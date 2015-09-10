@@ -1,0 +1,170 @@
+<template name="UserBucketList">
+    <div class="updateBucketListContainer">
+        <div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#created" data-toggle="tab">Created</a></li>
+                <li><a href="#following" data-toggle="tab">Following</a></li>
+            </ul>
+            <button type="button" class="btn btn-default" id="refreshButton">
+                <span class="entypo cycle"></span>
+            </button>
+        </div>
+
+        <div class="container" id="userBucketListTemplate">
+            <!-- Errors Starts -->
+            <div id="userBucketList-generic-error">
+            </div>
+
+            <div class="error-text hidden">
+                <span class="UBL_101 BUF_101">Some technical error occurred.</span>
+
+                <!-- Unfollow -->
+                <!--<span class="BUF_101">Technical error occurred, while attempting to unfollow the bucket.</span>-->
+
+            </div>
+            <!-- Errors Ends -->
+
+            <div class="hide" id="userBucketList">
+                {{#if eq this.style 'book' true}}
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="created">
+                        <div>
+                            <h3>
+                                <small>Buckets created by you.</small>
+                            </h3>
+                        </div>
+                        {{> _PrintBucket bucketList=getCreateBucketList bucketType='created'}}
+                    </div>
+
+                    <div class="tab-pane fade" id="following">
+                        <div>
+                            <h3>
+                                <small>Buckets you are following.</small>
+                            </h3>
+                        </div>
+                        {{> _PrintBucket bucketList=getFollowedBucketList bucketType='followed'}}
+                    </div>
+                </div>
+
+                {{> UpdateBucketMeta }}
+                {{> DeleteBucket }}
+                {{/if}}
+            </div>
+            <div class="" id="userBucketListWaiting">
+                {{> Loading }}
+            </div>
+        </div>
+
+        <div class="modal fade" id="postListModal" tabindex="-1" role="dialog" aria-labelledby="postListLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    {{#with templateData}}
+                        {{> UI.dynamic template=this.template data=this.dataContext}}
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="_PrintBucket">
+    {{#each bucketList}}
+    <div class="alterColor" id="{{this._id}}">
+
+        <div class="hide options">
+        {{#if eq ../bucketType 'created' true}}
+        <ul>
+            <li class="postList">
+                <button type="button" class="entypo list" value="{{this._id}}" id="postListBucketButton"></button>
+            </li>
+            <li class="">
+                <button type="button" class="entypo cog" value="{{this._id}}" id="editBucketButton"></button>
+            </li>
+            <li class="">
+                <button type="button" class="entypo trash" value="{{this._id}}" id="deleteBucketButton"></button>
+            </li>
+            <li class="">
+                <a href="{{pathFor 'bucket.insight'}}" target="_blank" style="color: #fff;"><button type="button" class="entypo level-down"></button></a>
+            </li>
+        </ul>
+        {{/if}}
+        </div>
+
+        <div class="col-md-4 user_bucket_list" >
+            <div class="book">
+                <div class="book_name">
+                    {{#if eq ../bucketType 'followed' true}}
+                        <div class="control pull-right">
+                            <!--<button type="submit" class="btn btn-secondary ">Follow</button>-->
+                            <!--<li class="">-->
+                                <button type="submit" class="btn btn-secondary " id="unFollowButton" bucket="{{this._id}}">
+                                    UnFollow
+                                </button>
+                            <!--</li>-->
+                        </div>
+                    {{/if}}
+                    <h2>{{toCapitalize this.f_bucket.f_name}}</h2>
+                </div>
+
+                <div class="book_details">
+                    <span class="details">{{this.f_bucket.f_desc}}</span>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <ul>
+                <li class="followCount">
+                    <i class="entypo users"></i>
+                    {{#if this.f_followCount}}
+                        {{this.f_followCount}}
+                    {{else}}
+                    0
+                    {{/if}}
+                </li>
+                <li class="postcount">
+                    <i class="entypo paper-plane"></i> {{this.f_postListCount}}
+                </li>
+
+                {{#if eq this.f_bucket.f_access 'PRIVATE' true}}
+                <li><span class="entypo lock" id="isPrivate"></span></li>
+                {{/if}}
+
+                {{#if eq this.f_bucket.f_access 'PUBLIC' true}}
+                {{#if eq this.f_bucket.f_isEditable false}}
+                <li><i class="entypo cross" style="font-size: 3em;"></i></li>
+                {{/if}}
+                {{/if}}
+
+                <li class="timestamp pull-right">{{>Timestamp timestamp=this.f_timestamp}}</li>
+
+            </ul>
+        </div>
+
+
+
+        <!--{{#if eq ../bucketType 'followed' true}}
+            <li class="">
+                <button type="submit" class="btn btn-default " id="unFollowButton" bucket="{{this._id}}">
+                    UnFollow
+                </button>
+            </li>
+        {{/if}}-->
+
+    </div>
+    {{else}}
+    <div class="bs-callout bs-callout-danger">
+        <h4>No buckets present</h4>
+        <p>
+            {{#if eq bucketType 'created' true}}
+            Please create a bucket.
+            {{else}}
+            Follow a bucket <a href="{{pathFor 'bucket'}}">click here</a>.
+            {{/if}}
+        </p>
+    </div>
+    {{/each}}
+</template>

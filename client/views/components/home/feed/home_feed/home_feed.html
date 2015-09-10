@@ -1,0 +1,82 @@
+<template name="HomeFeed">
+    <div id="homeFeedTemplate">
+        <!-- Errors Starts here-->
+        <div id="homeFeed-generic-error">
+        </div>
+
+        <div class="error-text hidden">
+            <span class=""></span>
+        </div>
+        <!-- Errors Ends -->
+
+        {{> StatusFeed }}
+        {{> AddToBucket }}
+    </div>
+</template>
+
+<template name="StatusFeed">
+    {{> pagesNav}}
+    {{> pages}}
+</template>
+
+<template name="home_pagesItemDefault">
+    <li class="list-group-item" id="{{this._id}}">
+        <div class="thumbnail {{this.f_color}}">
+            <div class="thumbnailContainer">
+                {{#if this.f_expires}}
+                        {{> ExpiryCounter postId=this._id expiryTime=this.f_expiryTime}}
+                        {{addExpiryTimer}}
+                {{/if}}
+
+                <h4>{{this.f_message}}</h4>
+                <div class="homeFeedFooter">
+
+                    {{> StatusLikeUnlike postId=this._id errorPrefix="homeFeed" parentTemplate="homeFeedTemplate"}}
+
+                    {{#if eq this.f_expires false}}
+                        <button type="button" class="btn addtoBucketIcon pull-left" id="addToBucketButton" value="{{this._id}}">
+                            <span class="entypo bucket"></span>
+                            <span class="entypo plus"></span>
+                        </button>
+                    {{/if}}
+
+                    <button class="btn pull-right" role="button" id="showMessageButton" value="{{this._id}}">
+                        <span class="entypo level-down"></span>
+                    </button>
+                    <div id="timestamp" class="pull-right">
+                        <!--{{> Timestamp timestamp=this.f_timestamp}}-->
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+                <div class="homeFeedFooter-bg"></div>
+            </div>
+        </div>
+    </li>
+
+</template>
+
+
+<template name="home_pagesPageCont">
+    <div class="{{divWrapper pagesData}}" id="pageCont">
+        <ul>
+            {{> _pagesPage pagesData}}
+        </ul>
+    </div>
+</template>
+
+
+<!--displaying a page -->
+<template name="home_pagesNavCont">
+    <div id="navCont">
+        {{> _pagesNav pagesData}}
+    </div>
+</template>
+
+<template name="home_pagesLoading">
+    <!-- dont remove .pagesLoadingDefaultCont as it is pagesClass for making loading page absolute-->
+    <div class="pagesLoadingDefaultCont">
+        {{> Loading}}
+        <!--<h1 class="shimmer"> Loading ... </h1>-->
+    </div>
+</template>

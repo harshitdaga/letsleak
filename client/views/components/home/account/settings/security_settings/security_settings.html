@@ -1,0 +1,64 @@
+<template name="SecuritySettings">
+    <div id="securitySettingsTemplate">
+         <span>
+             <h4>Change Security Pin</h4>
+             <hr>
+
+         </span>
+
+        <!-- Errors Starts -->
+        <div class="alert alert-success" role="alert" id="securitySettings-generic-success" style="display: none">
+            Your security pin was successfully changed.
+        </div>
+
+        <div id="securitySettings-generic-error">
+        </div>
+
+        <div class="error-text hidden">
+            <span class="SS_101">You can't leave this empty.</span>
+            <span class="SS_102">Use at least 5 characters.</span>
+            <span class="SS_103">Confirm Security Pin does not match with new Security Pin.</span>
+            <span class="L_102">Current password you entered is incorrect. Try again.</span>
+        </div>
+        <!-- Errors Ends -->
+
+        <form class="form-horizontal" role="form" id="securityPinChangeForm">
+
+            <div class="form-group" id="currentPasswordGroup">
+                <label class="col-sm-3 control-label" for="currentPassword">Curent Password</label>
+
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="currentPassword" placeholder="Current password">
+                    <span class="error-text"></span>
+                </div>
+            </div>
+
+            <div class="form-group" id="newPinGroup">
+                <label class="col-sm-3 control-label" for="newPin">New Pin</label>
+
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="newPin" placeholder="New Security Pin">
+                  <span class="help-text hide">
+                         Use at least 5 characters.
+                    </span>
+                    <span class="error-text"></span>
+                </div>
+            </div>
+
+            <div class="form-group" id="confirmNewPinGroup">
+                <label class="col-sm-3 control-label" for="confirmNewPin">Confirm New Pin</label>
+
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="confirmNewPin" placeholder="Confirm New Security Pin">
+                    <span class="error-text"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="submit" class="btn btn-primary" id="changePinButton">Change Security Pin</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</template>

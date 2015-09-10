@@ -1,0 +1,30 @@
+<template name="_FalseReportAbuseTemplate">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title" id="subject">Attention, you falsely reported abuse</h4>
+    </div>
+    <div class="modal-body">
+        <div class="bs-callout bs-callout-info">
+            <!--<h4>Why you recieved this inbox</h4>-->
+            <p>It seems that a particular post by you was falsely reported as abuse according to our manual review committee's decision.</p>
+            <p>Please ensure that when you Report Abuse the issue is taken very seriously and you should not misuse this facility.</p>
+        </div>
+
+        <hr>
+
+        <h4>The manual review committee has ruled that the following post is moderately in consideration of the LetsLeak standards.</h4>
+        <p>{{this.f_paramObj.postMessage}}</p>
+
+        <hr>
+        <p>
+        <h5>
+            <small>
+                This is an auto-generated message. If you have any concerns please visit {{>Links key="ContactUs" message="Contact Us" target="_blank"}}.
+            </small>
+        </h5>
+        </p>
+    </div>
+    <div class="clearfix"></div>
+</template>

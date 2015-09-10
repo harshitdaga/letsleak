@@ -1,0 +1,97 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+/*****************************************************************************/
+/* BucketEditorSelection: Style */
+/*****************************************************************************/
+
+#bucketEditorSelectionTemplate #control {
+    position: absolute;
+    right: 5%;
+}
+#bucketEditorSelectionTemplate .btn-default.glyphicon-play {
+    float: right !important;
+}
+#bucketEditorSelectionTemplate .caption {
+    padding: 0;
+}
+#bucketEditorSelectionTemplate .caption h3 {
+    margin-top: 0;
+    width: 64%;
+    font-size: 20px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+#bucketEditorSelectionTemplate .col-sm-6 {
+    padding: 5px;
+    font-size: 0.7em;
+}
+#bucketEditorSelectionTemplate .thumbnail {
+    margin: 0;
+    padding: 10px;
+    border-radius: 2px;
+    min-height: 300px;
+    position: relative;
+}
+#bucketEditorSelectionTemplate p {
+    font-size: 14px;
+    padding: 10px 0;
+    word-wrap: break-word;
+    white-space: normal;
+}
+#bucketEditorSelectionTemplate .glyphicon-user:hover {
+    background-color: transparent;
+    cursor: default;
+}
+#bucketEditorSelectionTemplate .bucketEditorFooter .entypo.users, #bucketEditorSelectionTemplate .bucketEditorFooter .entypo.paper-plane {
+    margin: -0.25em;
+}
+#bucketEditorSelectionTemplate .bucketEditorFooter span {
+    margin: 0 3px;
+}
+#bucketEditorSelectionTemplate .bucketEditorFooter span#timestamp {
+    margin-right: 30px;
+    margin-top: -5px;
+}
+#bucketTemplate a.userBucketIcon {
+    position: relative;
+    font-size: 16px;
+    color: #4e5d72;
+}
+#bucketTemplate a.userBucketIcon .glyphicon-user {
+    font-size: 12px;
+    position: absolute;
+    left: 23px;
+    top: 15px;
+}
+#bucketTemplate a.userBucketIcon .fa-long-arrow-right {
+    margin-left: 10px;
+}
+.bucketEditorFooter {
+    position: absolute;
+    bottom: 5px;
+    width: 90%;
+    z-index: 9;
+}
+@-moz-document url-prefix() {
+    .bucketEditorFooter {
+        bottom: -10px;
+    }
+}
+.bucketEditorFooter .fa-location-arrow, .bucketEditorFooter .fa-comments-o {
+    padding: 5px 3px;
+    font-size: 1.3em;
+}
+.bucketFooter-bg {
+    background-color: #333333;
+    height: 35px;
+    width: 100%;
+    opacity: .1;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

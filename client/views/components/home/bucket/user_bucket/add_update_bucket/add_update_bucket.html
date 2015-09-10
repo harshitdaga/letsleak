@@ -1,0 +1,80 @@
+<template name="AddUpdateBucket">
+    <div id="addUpdateBucketTemplate">
+
+        <!-- Errors Starts -->
+        <div id="addUpdateBucket-generic-error">
+        </div>
+
+        <div class="error-text hidden">
+            <span class="B_101 B_104">You can't leave this empty.</span>
+            <span class="B_102">Bucket name can't be more than 50 characters.</span>
+            <span class="B_103">Name should only contain letters or numbers.</span>
+            <!--<span class="B_104">Bucket description cannot be empty</span>-->
+            <span class="B_105">Description can't be more than 150 characters.</span>
+            <span class="B_1004">Your bucket was successfully saved. However it is under review. We will update you once this is done.</span>
+        </div>
+        <!-- Errors Ends -->
+
+        <form class="form-horizontal" role="form" name="addBucketForm" id="addBucketForm">
+            <div class="bucketName pull-left">
+                <fieldset>
+                    <legend>Bucket details</legend>
+                    <div class="form-group" id="bucketNameGroup">
+                        <input type="text" class="form-control" id="bucketName" name="bucketName" placeholder="Bucket Name" maxlength="50">
+                        <span class="error-text"></span>
+                        <span class="help-text hide">
+                            Use maximum 50 characters. You can only use letters, numbers and ! , * & - special character.
+                        </span>
+                    </div>
+                    <div class="form-group" id="bucketDescGroup">
+                        <textarea type="text" class="form-control" id="bucketDesc" name="bucketDesc" maxlength="150" placeholder="This bucket is about ..."></textarea>
+                        <span class="error-text"></span>
+                        <span class="help-text hide">
+                            Use maximum 150 characters.
+                        </span>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="groupSeparator">
+                <p></p>
+            </div>
+
+            <div class="advancedSetting pull-right">
+                <fieldset>
+                    <legend>Bucket settings</legend>
+                    <div class="options-bar" id="access">
+                        <span class="col-sm-2 ">Is Bucket Public?</span>
+                            <i class="fa fa-check" id="yes_public"></i>
+                            <i class="fa fa-times inactive" id="no_public"></i>
+                        <span class="error-text"></span>
+                        <span class="help-text">
+                            This option controls the access of this bucket to other users. If a bucket is public, everyone can see the contents of the bucket, else the bucket visible only to you.
+                        </span>
+                    </div>
+
+                    <div class="options-bar" id="editableByPublic">
+
+                        <span class="col-sm-2 ">Allow others to add post?</span>
+                            <i class="fa fa-check" id="yes_editable"></i>
+                            <i class="fa fa-times inactive" id="no_editable"></i>
+                        <span class="error-text"></span>
+                        <span class="help-text">
+                            This option controls who can adds content to this public bucket. If selected, all the users who follow this bucket can add posts to the bucket. In either case, you can monitor and delete content to the bucket.
+                        </span>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="clearfix"></div>
+
+            <input type="text" class="form-control hidden" id="bucketId" name="bucketId" value="{{this.id}}">
+            <input type="text" class="form-control hidden" id="action" name="action" value="">
+
+            <div class="form-group" id="actionButtons">
+                    <button type="submit" class="btn btn-primary pull-right" id="addAction">Add Bucket</button>
+            </div>
+
+        </form>
+    </div>
+
+</template>

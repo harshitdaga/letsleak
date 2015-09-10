@@ -1,0 +1,20 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+/*****************************************************************************/
+/* AddToBucket: Style */
+/*****************************************************************************/
+
+#addToBucket .desc {
+    margin-left: 15px;
+}
+
+#addToBucket .desc footer:before {
+    content: none;
+}
+#addtobuckettemplate {
+    font-size: 1.5em;
+}

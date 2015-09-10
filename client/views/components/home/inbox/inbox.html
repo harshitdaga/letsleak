@@ -1,0 +1,48 @@
+<template name="Inbox">
+    <div id="inboxTemplate">
+
+        <!-- Errors Starts -->
+        <div id="inbox-generic-error">
+        </div>
+
+        <div class="error-text hidden">
+        </div>
+        <!-- Errors Ends -->
+
+        <button type="button" class="btn btn-default pull-right" id="refreshButton">
+            <span class="entypo cycle"></span>
+        </button>
+        <div class="clearfix"></div>
+
+        {{#if mailsExist}}
+        <div class="list-group">
+            {{#each mails}}
+            <a href="#" class="list-group-item mail" id="{{this._id}}">
+                {{#if neq this.isArchived true}}
+                <button type="button" class="btn btn-secondary pull-left marginR20" id="markAsRead">Read</button>
+                {{/if}}
+                <span class="pull-left">{{this.subject}}</span>
+                <span class="pull-right">{{>Timestamp timestamp=this.timestamp}}</span>
+                <div class="clearfix"></div>
+                <!--{{this.shortDesc}}-->
+            </a>
+            {{/each}}
+        </div>
+        <div class="clearfix"></div>
+        {{else}}
+        <div class="bs-callout bs-callout-warning">
+            Nothing to see here, move along baby!
+        </div>
+        {{/if}}
+
+        <div class="modal fade" id="mailBox" tabindex="-1" role="dialog" aria-labelledby="mailBoxLable"
+             aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+                    {{> UI.dynamic template=mailTemplate data=dataContext}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

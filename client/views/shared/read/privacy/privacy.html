@@ -1,0 +1,21 @@
+
+<template name="_Privacy">
+    <div id="privacyTemplate">
+        <header>Privacy</header>
+        <div class="description">
+            <p>
+                LetsLeak is committed to protecting your privacy and the security of personally identifying information, including yours. By using the LetsLeak you consent to these {{>Links key="TnC" message="Terms and Conditions"}}. LetsLeak is not responsible for the content on, or privacy practices, of any non-LetsLeak entity, website, or service to which the it links or that links to LetsLeak.
+            </p>
+            <p>
+                LetsLeak generally collects very little information that personally identifies you, which is your email-id. LetsLeak then requires you to create a username and password. This email address is only used to notify you about our developments or news and is never exposed to any other user using LetsLeak and neither sold to any third party.
+            </p>
+            <p>However, if due to legal issues, the law asks LetsLeak to provide the account details of users posting inappropriate content, LetsLeak will provide the details.
+            </p>
+        </div>
+    </div>
+
+</template>
+
+<template name="Privacy">
+    {{> Read templateName="_Privacy"}}
+</template>

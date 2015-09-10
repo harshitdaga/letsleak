@@ -1,0 +1,80 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+/*****************************************************************************/
+/* Global CSS Styles */
+/*****************************************************************************/
+
+
+/*****************************************************************************/
+/* Home: Style */
+/*****************************************************************************/
+
+/*****************************************************************************/
+/* Status: Style */
+/*****************************************************************************/
+#statusTemplate {
+    margin-top: 50px;
+}
+
+#statusTemplate #error {
+    border: 1px solid
+
+}
+
+/*****************************************************************************/
+/* Header: Style */
+/*****************************************************************************/
+#headerTemplate nav {
+    background: #151515;
+    color: #f4f4f4;
+    /*line-height: 0;*/
+}
+#headerTemplate .navbar-nav #bucketPopover ul li:last-child {
+    margin-bottom: 5px;
+}
+#headerTemplate nav .navbar-default .navbar-nav > li > a {
+    color: #f4f4f4;
+    font-size: 12px;
+}
+
+#headerTemplate {
+    /*padding-bottom: 20px;*/
+}
+
+/*****************************************************************************/
+/* HomeLayout: Style */
+/*****************************************************************************/
+
+#headerTemplate a {
+    text-decoration: none;
+}
+#headerTemplate a:hover {
+    color: #ffffff;
+}
+/*****************************************************************************/
+/* FooterLayout: Style */
+/*****************************************************************************/
+
+#footerTemplate {
+    position: fixed;
+    bottom: 0;
+    /*width: 960px;*/
+    background-color: #fff;
+    opacity: .6;
+    filter: alpha(opacity=60);
+    font-size: 12px;
+    text-align: center;
+    padding: 5px;
+    border-top: 1px solid #b7bbbd;
+}
+#footerTemplate p {
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    top: -10px;
+}
+

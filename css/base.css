@@ -1,0 +1,38 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+
+
+/* ============================================================
+  HTML & BODY
+============================================================ */
+body {
+  background-color: #1e1e1e;
+  color: #505050;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  /*font-size: 14px;*/
+  line-height: 1.5;
+}
+
+/* ============================================================
+  PRIMARY STRUCTURE
+============================================================ */
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+main {
+  display: block;
+  background-color: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

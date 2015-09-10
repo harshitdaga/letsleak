@@ -1,0 +1,39 @@
+/*
+ * LetsLeak
+ * An anonymonus social platform
+ * Copyright 2014 LetsLeak
+ * https://github.com/harshitdaga/letsleak
+*/
+/*****************************************************************************/
+/* AddUpdateBucket: Style */
+/*****************************************************************************/
+
+#addUpdateBucketTemplate .options-bar {
+    width: 100%;
+    position: relative;
+}
+#userBucketTemplate {
+
+}
+#addUpdateBucketTemplate {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 2px;
+}
+#addUpdateBucketTemplate textarea.form-control {
+    resize: none;
+    border-radius: 2px;
+    min-height: 160px;
+}
+#addUpdateBucketTemplate .bucketName, #addUpdateBucketTemplate .advancedSetting {
+    width: 48%;
+}
+#addUpdateBucketTemplate .bucketName {
+    margin-right: 20px;
+}
+#addUpdateBucketTemplate #actionButtons {
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    margin: 0;
+}

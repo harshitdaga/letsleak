@@ -1,0 +1,98 @@
+<template name="StatusMessage">
+    <div class="statusMessageCont" id="statusMessageTemplate">
+        {{#if eq postFetchStatus "VALID" true}}
+        <div class="statusMessageLeftCont {{getColor}}">
+            <div id="leftPanel" class="leftPanel">
+                <!-- Errors Starts -->
+                <div class="statusError">
+                    <div id="statusMessage-generic-error"></div>
+                    <div class="error-text hidden">
+                        <span class="PS_1003">Post does not exist.</span>
+                        <span class="PS_1004">Post is under review.</span>
+                    </div>
+                </div>
+                <!-- Errors Ends -->
+                <div class="statusMessageContent" id="statusMessageContent">
+                    <!--<div class="{{setFontClass getColor}}">-->
+                    <div>
+                        <div class="jumbotron pull-left statusMessage" id="{{this.postId}}">
+                            <span class="pull-left">
+                            {{#if isPostAuthor}}
+                            <i class="entypo user"></i>
+                            {{/if}}
+                            </span>
+                            <div id="message">
+                                <h2>{{getMessage}}</h2>
+                            </div>
+                        </div>
+                        <div id="options">
+                            {{> StatusLikeUnlike postId=this.postId errorPrefix="statusMessage"
+                            parentTemplate="statusMessageTemplate"}}
+                            {{#if eq isExpires false}}
+                            <span id="bucketIt">
+                            <button type="button" class="btn addtoBucketIcon" id="addToBucketButton"
+                                    value="{{this.postId}}">
+                                <i class="entypo bucket"></i>
+                                <i class="entypo plus"></i>
+                            </button>
+                            </span>
+                            {{/if}}
+                            {{#if isPostAuthor}}
+                            <span class="">
+                                <button type="button" class="btn" id="deletePostButton"><i class="entypo trash"></i></button>
+                            </span>
+                            {{/if}}
+                            {{#if isExpires}}
+                            {{> ExpiryCounter postId=this.postId expiryTime=expiryTime}}
+                            {{addExpiryTimer}}
+                            {{/if}}
+                            <!--{{> Timestamp timestamp = getTimestamp}}-->
+                        </div>
+                        {{#if isNotPostAuthor this.postId}}
+                        {{> ReportAbuse postId=this.postId postType="STATUS" }}
+                        {{/if}}
+                        {{#if eq isExpires false}}
+                        {{> AddToBucket postId=this.postId}}
+                        {{/if}}
+                    </div>
+                </div>
+                {{> DeleteStatus postId=this.postId}}
+            </div>
+        </div>
+        <div class="statusMessageRightCont">
+            {{#if isCommentAllowed}}
+            <div id="rightPanel" class="statusMessageComment">
+                {{> StatusComment postId=this.postId}}
+            </div>
+            {{else}}
+            <div id="rightPanel" class="bs-callout bs-callout-warning">
+                Comments are not allowed for this post.
+            </div>
+            {{/if}}
+        </div>
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                </div>
+            </div>
+        </div>
+        {{else}}
+            {{#if eq postFetchStatus "UNDER_REVIEW" true}}
+            <div class="alert-info">
+                <span>Post is under review.</span>
+            </div>
+            {{/if}}
+            {{#if eq postFetchStatus "POST_NO_LONGER_EXIST" true}}
+            <div class="alert-info">
+                <span>Timesup! Post no longer exist.</span>
+            </div>
+            {{/if}}
+            {{#if eq postFetchStatus "NOT_VALID" true}}
+            <div class="alert-info">
+                <span>Oops! Invalid link.</span>
+            </div>
+            {{/if}}
+        {{/if}}
+    </div>
+</template>

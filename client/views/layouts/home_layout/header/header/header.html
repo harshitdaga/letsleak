@@ -1,0 +1,71 @@
+<template name="Header">
+    <div id="headerTemplate">
+        <nav class="navbar navbar-static-top navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="letsleak-header-logo pull-left"><a href="/home" title="LetsLeak" alt="LetsLeak"></a> </div>
+                <div class="navbar-header nav-header-icons pull-right">
+
+                    <table>
+                        <tr>
+                            <td id="notification">{{> Notification}}</td>
+                            <td>
+                                <a href="/home/inbox">
+                                    <!--<i data-hover="fa-inbox" class="fa fa-inbox"></i>-->
+                                    <div class="header-icons icon-inbox"></div>
+                                    {{> InboxCount}}
+                                </a>
+                            </td>
+                            <td class="bucketNav">
+                                <!--<i class="entypo bucket" id="bucketOption"></i>-->
+                                <div class="header-icons icon-bucket" id="bucketOption"></div>
+                                <div class="hide" id="bucketPopover">
+                                <span id="content">
+                                    <ul>
+                                        <li>
+                                            <!--<a href="/home/bucket" class="entypo bucket"></a>-->
+                                            <a href="/home/bucket">
+                                            <span class="header-icons icon-bucket"></span>
+                                                </a>
+                                        </li>
+                                        <li><a href="{{pathFor 'user.bucket'}}">
+                                            <!--<i class="entypo user"></i>
+                                            <i class="entypo bucket"></i>-->
+                                            <span class="header-icons icon-user-bucket"></span>
+                                        </a></li>
+                                    </ul>
+                                </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle mobileMenu" data-toggle="dropdown">
+                                <span class="userName"> Welcome {{toCapitalize username}}<b class="caret"></b></span>
+                                <span class="fa fa-bars"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{pathFor 'settings'}}">Settings</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#" id="productTour">Product Tour</a></li>
+                                <li>{{>Links key="FAQ" message="Help" target="_blank"}}</li>
+                                <li>{{>Links key="GroundRules" target="_blank" message="Ground Rules"}}</li>
+                                <li>{{>Links key="Report" target="_blank" message="Report Issue"}}</li>
+                                <li class="divider"></li>
+                                <li><a href="#" id="logout">Logout</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+
+</template>
